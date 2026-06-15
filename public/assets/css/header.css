@@ -7,7 +7,7 @@
     position: fixed;
     top: 16px;
     left: 50%;
-    z-index: 900;
+    z-index: 1002;
     width: min(1240px, calc(100% - 44px));
     min-height: 74px;
     transform: translateX(-50%);
@@ -35,6 +35,10 @@
     background: rgba(5, 5, 5, .88);
     border-color: rgba(255, 255, 255, .17);
 }
+
+/* =========================
+   BRAND
+   ========================= */
 
 .brand {
     display: inline-flex;
@@ -91,6 +95,10 @@
     white-space: nowrap;
 }
 
+/* =========================
+   DESKTOP NAV
+   ========================= */
+
 .desktop-nav {
     display: flex;
     align-items: center;
@@ -108,7 +116,8 @@
     transition: color .2s ease;
 }
 
-.desktop-nav a:hover {
+.desktop-nav a:hover,
+.desktop-nav a.active {
     color: #ffffff;
 }
 
@@ -126,7 +135,13 @@
     box-shadow: 0 18px 44px rgba(0, 0, 0, .28);
 }
 
+/* =========================
+   MENU TOGGLE
+   ========================= */
+
 .menu-toggle {
+    position: relative;
+    z-index: 1004;
     display: none;
     width: 48px;
     height: 48px;
@@ -146,7 +161,9 @@
     height: 2px;
     border-radius: 999px;
     background: #ffffff;
-    transition: transform .25s ease, opacity .25s ease;
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
 }
 
 body.menu-open .menu-toggle span:first-child {
@@ -164,15 +181,23 @@ body.menu-open .menu-toggle span:last-child {
 .mobile-menu {
     position: fixed;
     inset: 0;
-    z-index: 850;
+    z-index: 1001;
+    display: block;
+    padding: 96px 16px 24px;
     background:
-        radial-gradient(circle at 50% 0%, rgba(215, 25, 32, .20), transparent 34%),
-        rgba(0, 0, 0, .94);
+        radial-gradient(circle at 0% 0%, rgba(215, 25, 32, .28), transparent 34%),
+        rgba(0, 0, 0, .91);
     backdrop-filter: blur(20px);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity .28s ease, visibility .28s ease;
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 body.menu-open .mobile-menu {
@@ -182,31 +207,51 @@ body.menu-open .mobile-menu {
 }
 
 .mobile-menu-inner {
-    width: min(420px, calc(100% - 32px));
-    min-height: calc(100svh - 120px);
-    margin: 96px auto 24px;
+    width: min(420px, 100%);
+    margin: 0 auto;
+    padding: 22px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .025)),
+        #070707;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, .55);
     display: grid;
-    align-content: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .mobile-menu-inner a {
-    min-height: 56px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, .13);
-    background: rgba(255, 255, 255, .06);
-    color: #ffffff;
     display: flex;
     align-items: center;
-    padding: 0 18px;
-    font-size: 1.05rem;
-    font-weight: 900;
+    min-height: 50px;
+    padding: 0 14px;
+    border-radius: 16px;
+    color: rgba(255, 255, 255, .78);
+    font-size: .95rem;
+    font-weight: 850;
+    border: 1px solid rgba(255, 255, 255, .06);
+    background: rgba(255, 255, 255, .035);
+    transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.mobile-menu-inner a:hover,
+.mobile-menu-inner a.active {
+    color: #ffffff;
+    background: rgba(215, 25, 32, .14);
+    border-color: rgba(215, 25, 32, .28);
 }
 
 .mobile-menu-inner .mobile-cta {
-    background: var(--red);
-    border-color: rgba(255, 255, 255, .18);
+    margin-top: 10px;
     justify-content: center;
+    min-height: 54px;
+    border-radius: 999px;
+    background: var(--red);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, .18);
 }
 
 /* =========================
@@ -248,10 +293,24 @@ body.menu-open .mobile-menu {
         max-width: calc(100% - 60px);
     }
 
+    .brand-text {
+        overflow: hidden;
+    }
+
     .brand-text strong,
     .brand-text small {
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+}
+
+@media (min-width: 981px) {
+    .mobile-menu {
+        display: none !important;
+    }
+
+    body.menu-open {
+        overflow: auto;
     }
 }
 
@@ -295,8 +354,18 @@ body.menu-open .mobile-menu {
         border-radius: 15px;
     }
 
+    .mobile-menu {
+        padding: 86px 12px 20px;
+    }
+
     .mobile-menu-inner {
-        margin-top: 90px;
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .mobile-menu-inner a {
+        min-height: 48px;
+        font-size: .9rem;
     }
 }
 

@@ -140,6 +140,48 @@
 </footer>
 
 <script src="{{ asset('assets/js/tsb.js') }}"></script>
+<script>
+    document.addEventListener('click', function (event) {
+        const button = event.target.closest('#menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (!button || !mobileMenu) {
+            return;
+        }
+
+        const isOpen = document.body.classList.toggle('menu-open');
+        button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', function (event) {
+        const link = event.target.closest('#mobileMenu a');
+        const button = document.getElementById('menuToggle');
+
+        if (!link) {
+            return;
+        }
+
+        document.body.classList.remove('menu-open');
+
+        if (button) {
+            button.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key !== 'Escape') {
+            return;
+        }
+
+        const button = document.getElementById('menuToggle');
+
+        document.body.classList.remove('menu-open');
+
+        if (button) {
+            button.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{{ asset('assets/js/tsb.js') }}"></script>
 </body>
