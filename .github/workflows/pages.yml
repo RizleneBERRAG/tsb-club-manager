@@ -92,6 +92,7 @@ jobs:
 
           python3 - <<'PY'
           from pathlib import Path
+          import re
 
           base = "/tsb-club-manager"
 
@@ -100,16 +101,16 @@ jobs:
               Path("_site/contact/index.html"),
           ]
 
-          replacements = {
-              'href="/assets/': f'href="{base}/assets/',
-              'src="/assets/': f'src="{base}/assets/',
-              'poster="/assets/': f'poster="{base}/assets/',
-              '<source src="/assets/': f'<source src="{base}/assets/',
-              'href="/contact"': f'href="{base}/contact/"',
-              'href="/contact/': f'href="{base}/contact/',
-              'href="/#': f'href="{base}/#',
-              'href="/"': f'href="{base}/"',
-          }
+          anchors = [
+              "top",
+              "club",
+              "disciplines",
+              "planning-tarifs",
+              "documents",
+              "galerie",
+              "acces",
+              "contact",
+          ]
 
           for file in files:
               html = file.read_text(encoding="utf-8")
@@ -121,8 +122,31 @@ jobs:
               ]:
                   html = html.replace(host, "")
 
-              for old, new in replacements.items():
-                  html = html.replace(old, new)
+              # Assets Laravel -> GitHub Pages project path
+              html = html.replace('href="/assets/', f'href="{base}/assets/')
+              html = html.replace('src="/assets/', f'src="{base}/assets/')
+              html = html.replace('poster="/assets/', f'poster="{base}/assets/')
+              html = html.replace('<source src="/assets/', f'<source src="{base}/assets/')
+
+              # Contact route
+              html = html.replace('href="/contact"', f'href="{base}/contact/"')
+              html = html.replace('href="/contact/"', f'href="{base}/contact/"')
+              html = html.replace('href="contact"', f'href="{base}/contact/"')
+              html = html.replace('href="contact/"', f'href="{base}/contact/"')
+
+              # Home route
+              html = html.replace('href="/"', f'href="{base}/"')
+              html = html.replace('href="/#', f'href="{base}/#')
+
+              # Fix relative anchors generated inside /contact/
+              # Example: /contact/#top -> /tsb-club-manager/#top
+              for anchor in anchors:
+                  html = html.replace(f'href="#{anchor}"', f'href="{base}/#{anchor}"')
+                  html = html.replace(f'href="/contact/#{anchor}"', f'href="{base}/#{anchor}"')
+                  html = html.replace(f'href="{base}/contact/#{anchor}"', f'href="{base}/#{anchor}"')
+
+              # Avoid accidental double prefix
+              html = html.replace(f'{base}{base}/', f'{base}/')
 
               file.write_text(html, encoding="utf-8")
           PY
