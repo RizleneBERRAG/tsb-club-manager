@@ -1,0 +1,840 @@
+/* =========================================================
+   CONTACT PAGE — TEAM SAMIR BOXING
+   public/assets/css/contact.css
+   ========================================================= */
+
+.tsb-contact-page {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 140px 0 34px;
+}
+
+.tsb-contact-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 12% 8%, rgba(215, 25, 32, .20), transparent 34%),
+        radial-gradient(circle at 85% 18%, rgba(255, 255, 255, .06), transparent 28%);
+    pointer-events: none;
+}
+
+/* HERO */
+
+.tsb-contact-hero,
+.tsb-contact-main,
+.tsb-contact-steps {
+    position: relative;
+    z-index: 2;
+    width: min(1320px, calc(100% - 44px));
+    margin: 0 auto;
+}
+
+.tsb-contact-hero {
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 28px;
+    align-items: stretch;
+    padding: 38px;
+    border-radius: 42px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background:
+        radial-gradient(circle at 0% 0%, rgba(215, 25, 32, .22), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02)),
+        #080808;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.tsb-contact-hero::after {
+    content: "CONTACT";
+    position: absolute;
+    right: -18px;
+    bottom: -30px;
+    color: rgba(255, 255, 255, .025);
+    font-size: clamp(6rem, 16vw, 15rem);
+    font-weight: 1000;
+    line-height: .8;
+    letter-spacing: -0.12em;
+    pointer-events: none;
+}
+
+.tsb-contact-hero-content {
+    max-width: 760px;
+    align-self: center;
+}
+
+.tsb-contact-hero-content h1 {
+    margin-top: 14px;
+    color: #ffffff;
+    font-size: clamp(3.2rem, 7vw, 7.6rem);
+    line-height: .86;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+}
+
+.tsb-contact-hero-content > p {
+    margin-top: 24px;
+    max-width: 620px;
+    color: rgba(255, 255, 255, .68);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.tsb-contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+/* IDENTITY CARD */
+
+.tsb-contact-identity {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    align-content: end;
+    padding: 26px;
+    border-radius: 34px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .38);
+}
+
+.tsb-contact-status {
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 9px 13px;
+    border-radius: 999px;
+    background: rgba(215, 25, 32, .16);
+    border: 1px solid rgba(215, 25, 32, .32);
+    color: #ffffff;
+    font-size: .68rem;
+    font-weight: 900;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.tsb-contact-logo-card {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, .35);
+}
+
+.tsb-contact-logo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tsb-contact-identity h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: -0.06em;
+}
+
+.tsb-contact-identity > p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, .62);
+    line-height: 1.65;
+}
+
+.tsb-contact-mini-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.tsb-contact-mini-list div {
+    padding: 14px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+.tsb-contact-mini-list strong {
+    display: block;
+    color: #ffffff;
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.tsb-contact-mini-list span {
+    display: block;
+    margin-top: 6px;
+    color: rgba(255, 255, 255, .58);
+    line-height: 1.4;
+}
+
+/* MAIN GRID */
+
+.tsb-contact-main {
+    display: grid;
+    grid-template-columns: .86fr 1.14fr;
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.tsb-contact-left,
+.tsb-contact-right {
+    display: grid;
+    gap: 24px;
+}
+
+.tsb-contact-info,
+.tsb-contact-map-card,
+.tsb-contact-form,
+.tsb-contact-step {
+    border: 1px solid rgba(255, 255, 255, .11);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .26);
+    box-shadow: var(--shadow);
+}
+
+.tsb-contact-section-head h2 {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: clamp(2rem, 3.4vw, 3.8rem);
+    line-height: .92;
+    letter-spacing: -0.075em;
+    text-transform: uppercase;
+}
+
+.tsb-contact-section-head p:not(.eyebrow) {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, .62);
+    line-height: 1.65;
+}
+
+/* COORDONNÉES */
+
+.tsb-contact-info {
+    padding: 28px;
+    border-radius: 34px;
+    font-style: normal;
+}
+
+.tsb-contact-info-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.tsb-contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    background: rgba(255, 255, 255, .035);
+    transition:
+        transform .22s ease,
+        background .22s ease,
+        border-color .22s ease;
+}
+
+.tsb-contact-info-item:hover {
+    transform: translateY(-2px);
+    background: rgba(215, 25, 32, .10);
+    border-color: rgba(215, 25, 32, .25);
+}
+
+.tsb-contact-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    background: rgba(215, 25, 32, .14);
+    color: #ffffff;
+}
+
+.tsb-contact-icon svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+}
+
+.tsb-contact-info-item small {
+    color: rgba(255, 255, 255, .44);
+    font-size: .68rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.tsb-contact-info-item strong {
+    display: block;
+    margin-top: 4px;
+    color: #ffffff;
+    font-size: .98rem;
+    line-height: 1.25;
+    word-break: break-word;
+}
+
+/* MAP */
+
+.tsb-contact-map-card {
+    overflow: hidden;
+    border-radius: 34px;
+}
+
+.tsb-map-frame {
+    height: 310px;
+    background: #050505;
+}
+
+.tsb-map-frame iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    filter: grayscale(1) invert(.9) contrast(.9);
+    opacity: .82;
+}
+
+.tsb-map-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 22px;
+    padding: 22px;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .16), transparent 34%),
+        rgba(0, 0, 0, .34);
+}
+
+.tsb-map-address h3 {
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 1.55rem;
+    line-height: .95;
+    letter-spacing: -0.055em;
+}
+
+.tsb-map-address p:not(.eyebrow) {
+    margin-top: 6px;
+    max-width: 520px;
+    color: rgba(255, 255, 255, .58);
+    line-height: 1.45;
+}
+
+.tsb-route-card {
+    min-width: 330px;
+    padding: 14px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02)),
+        rgba(0, 0, 0, .28);
+}
+
+.tsb-route-card > span {
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, .44);
+    font-size: .64rem;
+    font-weight: 950;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.tsb-route-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.tsb-route-actions a {
+    min-height: 42px;
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(255, 255, 255, .055);
+    color: rgba(255, 255, 255, .76);
+    font-size: .78rem;
+    font-weight: 900;
+    white-space: nowrap;
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease;
+}
+
+.tsb-route-actions a:hover {
+    transform: translateY(-1px);
+    background: rgba(215, 25, 32, .16);
+    border-color: rgba(215, 25, 32, .34);
+    color: #ffffff;
+}
+
+.tsb-route-actions svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+}
+
+/* FORM */
+
+.tsb-contact-form {
+    padding: 30px;
+    border-radius: 34px;
+}
+
+.tsb-contact-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 26px;
+}
+
+.tsb-field {
+    display: grid;
+    gap: 9px;
+    margin-top: 14px;
+}
+
+.tsb-contact-grid-2 .tsb-field {
+    margin-top: 0;
+}
+
+.tsb-field > span {
+    color: rgba(255, 255, 255, .58);
+    font-size: .76rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.tsb-field input,
+.tsb-field textarea {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(255, 255, 255, .045);
+    color: #ffffff;
+    border-radius: 18px;
+    padding: 15px 16px;
+    font: inherit;
+    outline: none;
+    transition:
+        border-color .22s ease,
+        background .22s ease,
+        box-shadow .22s ease;
+}
+
+.tsb-field textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.tsb-field input::placeholder,
+.tsb-field textarea::placeholder {
+    color: rgba(255, 255, 255, .34);
+}
+
+.tsb-field input:focus,
+.tsb-field textarea:focus {
+    border-color: rgba(215, 25, 32, .55);
+    background: rgba(255, 255, 255, .07);
+    box-shadow: 0 0 0 4px rgba(215, 25, 32, .10);
+}
+
+/* CHOICE CARDS */
+
+.tsb-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.tsb-choice {
+    position: relative;
+    cursor: pointer;
+}
+
+.tsb-choice input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tsb-choice span {
+    min-height: 96px;
+    display: grid;
+    align-content: center;
+    gap: 7px;
+    padding: 16px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .20);
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        background .22s ease,
+        box-shadow .22s ease;
+}
+
+.tsb-choice span::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .22);
+    background: rgba(255, 255, 255, .04);
+}
+
+.tsb-choice strong {
+    color: #ffffff;
+    font-size: .96rem;
+    line-height: 1.1;
+}
+
+.tsb-choice small {
+    color: rgba(255, 255, 255, .48);
+    line-height: 1.35;
+    font-size: .78rem;
+}
+
+.tsb-choice:hover span {
+    transform: translateY(-2px);
+    border-color: rgba(215, 25, 32, .30);
+    background: rgba(215, 25, 32, .08);
+}
+
+.tsb-choice input:checked + span {
+    border-color: rgba(215, 25, 32, .62);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .20), transparent 34%),
+        rgba(215, 25, 32, .10);
+    box-shadow:
+        0 16px 38px rgba(215, 25, 32, .12),
+        inset 0 0 0 1px rgba(215, 25, 32, .20);
+}
+
+.tsb-choice input:checked + span::before {
+    border-color: var(--red);
+    background:
+        radial-gradient(circle, #ffffff 0 34%, transparent 36%),
+        var(--red);
+}
+
+.tsb-choice input:focus-visible + span {
+    box-shadow:
+        0 0 0 4px rgba(215, 25, 32, .16),
+        inset 0 0 0 1px rgba(215, 25, 32, .20);
+}
+
+/* SUBMIT */
+
+.tsb-contact-submit {
+    width: 100%;
+    min-height: 58px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 999px;
+    background: var(--red);
+    color: #ffffff;
+    font-size: .98rem;
+    font-weight: 950;
+    cursor: pointer;
+    box-shadow: 0 18px 42px rgba(215, 25, 32, .22);
+}
+
+/* STEPS */
+
+.tsb-contact-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.tsb-contact-step {
+    padding: 24px;
+    border-radius: 28px;
+}
+
+.tsb-contact-step span {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: rgba(215, 25, 32, .14);
+    color: #ffffff;
+    font-size: .78rem;
+    font-weight: 950;
+}
+
+.tsb-contact-step h3 {
+    margin-top: 22px;
+    color: #ffffff;
+    font-size: 1.35rem;
+    letter-spacing: -0.05em;
+}
+
+.tsb-contact-step p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, .58);
+    line-height: 1.62;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+    .tsb-contact-page {
+        padding-top: 118px;
+    }
+
+    .tsb-contact-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .tsb-contact-main {
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-contact-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .tsb-contact-page {
+        padding-top: 96px;
+    }
+
+    .tsb-contact-hero,
+    .tsb-contact-main,
+    .tsb-contact-steps {
+        width: calc(100% - 24px);
+    }
+
+    .tsb-contact-hero {
+        padding: 22px;
+        border-radius: 30px;
+    }
+
+    .tsb-contact-hero::after {
+        display: none;
+    }
+
+    .tsb-contact-hero-content h1 {
+        font-size: clamp(2.65rem, 15vw, 4.2rem);
+    }
+
+    .tsb-contact-hero-content > p {
+        font-size: .92rem;
+        line-height: 1.62;
+    }
+
+    .tsb-contact-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-contact-identity,
+    .tsb-contact-info,
+    .tsb-contact-form {
+        padding: 22px;
+        border-radius: 26px;
+    }
+
+    .tsb-contact-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-choice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-contact-info-item {
+        align-items: flex-start;
+        padding: 14px;
+    }
+
+    .tsb-contact-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        border-radius: 15px;
+    }
+
+    .tsb-contact-info-item strong {
+        font-size: .9rem;
+    }
+
+    .tsb-map-frame {
+        height: 260px;
+    }
+
+    .tsb-map-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .tsb-route-card {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .tsb-route-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-route-actions a {
+        width: 100%;
+    }
+
+    .tsb-contact-step {
+        border-radius: 24px;
+    }
+}
+
+/* =========================================================
+   FORM AUTO SLIDER
+   ========================================================= */
+
+.tsb-form-slider {
+    margin-top: 22px;
+    padding: 20px 20px 18px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .12), transparent 32%),
+        linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+        rgba(0, 0, 0, .24);
+    overflow: hidden;
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tsb-form-slider-head {
+    margin-bottom: 16px;
+}
+
+.tsb-form-slider-head span {
+    display: inline-block;
+    color: rgba(255, 255, 255, .52);
+    font-size: .72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+}
+
+.tsb-form-slider-stage {
+    position: relative;
+    min-height: 120px;
+    flex: 1;
+}
+
+.tsb-form-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+        opacity .45s ease,
+        transform .45s ease;
+    pointer-events: none;
+}
+
+.tsb-form-slide.is-active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.tsb-form-slide strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+}
+
+.tsb-form-slide p {
+    color: rgba(255, 255, 255, .88);
+    font-size: .97rem;
+    line-height: 1.75;
+    max-width: 95%;
+}
+
+.tsb-form-slider-dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.tsb-form-slider-dots button {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .20);
+    cursor: pointer;
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        width .2s ease;
+}
+
+.tsb-form-slider-dots button:hover {
+    background: rgba(255, 255, 255, .45);
+}
+
+.tsb-form-slider-dots button.is-active {
+    width: 28px;
+    background: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .tsb-form-slider {
+        min-height: 200px;
+        padding: 18px 16px 16px;
+        border-radius: 22px;
+    }
+
+    .tsb-form-slide strong {
+        font-size: 1.08rem;
+    }
+
+    .tsb-form-slide p {
+        font-size: .9rem;
+        line-height: 1.65;
+        max-width: 100%;
+    }
+
+    .tsb-form-slider-stage {
+        min-height: 110px;
+    }
+}

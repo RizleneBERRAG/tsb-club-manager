@@ -1,0 +1,763 @@
+/* =========================================================
+   HOME SECTIONS — OFFICIAL PUBLIC WEBSITE
+   ========================================================= */
+
+.official-section,
+.official-media-hero {
+    width: min(1180px, calc(100% - 44px));
+    margin: 0 auto;
+    padding: 105px 0;
+    position: relative;
+}
+
+.section-heading {
+    max-width: 860px;
+    margin-bottom: 42px;
+}
+
+.section-heading h2,
+.media-copy h2,
+.about-content h2,
+.practical-card h2,
+.official-cta-box h2 {
+    font-size: clamp(2.35rem, 5vw, 5.6rem);
+    line-height: .9;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
+
+.section-heading p:not(.eyebrow),
+.media-copy p:not(.eyebrow),
+.about-content p:not(.eyebrow),
+.practical-card p:not(.eyebrow),
+.official-cta-box p:not(.eyebrow) {
+    margin-top: 22px;
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 1.04rem;
+}
+
+/* =========================
+   LIVE MEDIA INTRO
+   ========================= */
+
+.official-media-hero {
+    display: grid;
+    gap: 42px;
+}
+
+.media-copy {
+    max-width: 780px;
+}
+
+.live-video-wall {
+    display: grid;
+    grid-template-columns: 1.35fr .9fr;
+    gap: 18px;
+}
+
+.live-main-video,
+.live-tile,
+.about-image,
+.discipline-live-card,
+.gallery-item,
+.practical-card,
+.official-cta-box {
+    border: 1px solid rgba(255, 255, 255, .13);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .28);
+    backdrop-filter: blur(22px);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+.live-main-video {
+    min-height: 580px;
+    border-radius: 42px;
+}
+
+.live-main-video video,
+.live-main-video img,
+.live-tile video,
+.live-tile img,
+.about-image img,
+.discipline-live-card video,
+.discipline-live-card img,
+.gallery-item video,
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.live-main-video::after,
+.live-tile::after,
+.discipline-live-card::after,
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, .82)),
+        radial-gradient(circle at 30% 20%, rgba(215, 25, 32, .18), transparent 34%);
+    pointer-events: none;
+}
+
+.live-caption {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2;
+}
+
+.live-caption span,
+.live-tile span,
+.discipline-live-card span {
+    color: #ffb5b8;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: .68rem;
+    font-weight: 900;
+}
+
+.live-caption strong {
+    display: block;
+    margin-top: 10px;
+    max-width: 540px;
+    font-size: clamp(2rem, 4vw, 4.4rem);
+    line-height: .9;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
+
+.live-side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.live-tile {
+    min-height: 282px;
+    border-radius: 30px;
+}
+
+.live-tile span {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    z-index: 2;
+}
+
+/* =========================
+   ABOUT CLUB
+   ========================= */
+
+.official-split {
+    display: grid;
+    grid-template-columns: .95fr 1.05fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.about-image {
+    min-height: 620px;
+    border-radius: 42px;
+}
+
+.about-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, .78)),
+        radial-gradient(circle at 30% 20%, rgba(215, 25, 32, .20), transparent 34%);
+}
+
+.about-content {
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 42px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .28);
+    backdrop-filter: blur(22px);
+    box-shadow: var(--shadow);
+    padding: clamp(28px, 5vw, 58px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-points {
+    margin-top: 32px;
+    display: grid;
+    gap: 12px;
+}
+
+.about-points div {
+    min-height: 76px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .055);
+    display: grid;
+    align-content: center;
+    gap: 6px;
+    padding: 0 18px;
+}
+
+.about-points strong {
+    font-size: 1.15rem;
+    letter-spacing: -0.04em;
+}
+
+.about-points span {
+    color: var(--muted);
+}
+
+/* =========================
+   DISCIPLINES LIVE
+   ========================= */
+
+.discipline-live-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.discipline-live-card {
+    min-height: 390px;
+    border-radius: 36px;
+}
+
+.discipline-live-card div {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2;
+}
+
+.discipline-live-card h3 {
+    margin-top: 10px;
+    font-size: clamp(1.8rem, 3.5vw, 3.3rem);
+    line-height: .92;
+    letter-spacing: -0.075em;
+    text-transform: uppercase;
+}
+
+.discipline-live-card p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, .78);
+    line-height: 1.55;
+    max-width: 520px;
+}
+
+/* =========================
+   LIVE GALLERY
+   ========================= */
+
+.gallery-mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 210px;
+    gap: 14px;
+}
+
+.gallery-item {
+    border-radius: 28px;
+}
+
+.gallery-item.tall {
+    grid-row: span 2;
+}
+
+.gallery-item.wide {
+    grid-column: span 2;
+}
+
+/* =========================
+   ACCESS STEPS
+   ========================= */
+
+.access-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.access-step {
+    min-height: 300px;
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 32px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .28);
+    backdrop-filter: blur(22px);
+    box-shadow: var(--shadow);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.access-step span {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    background: var(--red);
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    box-shadow: 0 18px 42px rgba(215, 25, 32, .28);
+}
+
+.access-step h3 {
+    font-size: 1.45rem;
+    letter-spacing: -0.05em;
+}
+
+.access-step p {
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+/* =========================
+   PRACTICAL + FINAL CTA
+   ========================= */
+
+.practical-card,
+.official-cta-box {
+    border-radius: 42px;
+    padding: clamp(32px, 6vw, 72px);
+}
+
+.practical-actions {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.practical-actions a {
+    min-height: 52px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(255, 255, 255, .14);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.official-cta-box {
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.official-cta-box p:not(.eyebrow) {
+    max-width: 680px;
+}
+
+/* =========================
+   OFFICIAL PLANNING & PRICING
+   ========================= */
+
+.schedule-pricing-home {
+    padding-top: 120px;
+}
+
+.pricing-showcase {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.official-poster-card,
+.tariff-panel,
+.kids-card,
+.girls-card {
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 42px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .28);
+    backdrop-filter: blur(22px);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+.official-poster-card {
+    min-height: 620px;
+}
+
+.official-poster-card img,
+.girls-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.04) contrast(1.02);
+}
+
+.official-poster-card::after,
+.girls-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, transparent 44%, rgba(0, 0, 0, .84)),
+        radial-gradient(circle at 30% 20%, rgba(215, 25, 32, .18), transparent 34%);
+    pointer-events: none;
+}
+
+.official-poster-card > div,
+.girls-card > div {
+    position: absolute;
+    left: 26px;
+    right: 26px;
+    bottom: 26px;
+    z-index: 2;
+}
+
+.official-poster-card span,
+.girls-card span {
+    color: #ffb5b8;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: .68rem;
+    font-weight: 900;
+}
+
+.official-poster-card strong {
+    display: block;
+    margin-top: 10px;
+    font-size: clamp(2rem, 4vw, 4.2rem);
+    line-height: .9;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
+
+.tariff-panel {
+    padding: clamp(28px, 5vw, 56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tariff-panel h3,
+.kids-card h2,
+.girls-card h3 {
+    font-size: clamp(2rem, 4vw, 4.3rem);
+    line-height: .9;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
+
+.tariff-grid,
+.kids-prices {
+    margin: 28px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.tariff-grid div,
+.kids-prices div {
+    min-height: 118px;
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+}
+
+.tariff-grid span,
+.kids-prices span {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .68rem;
+    font-weight: 900;
+}
+
+.tariff-grid strong,
+.kids-prices strong {
+    font-size: 2.4rem;
+    letter-spacing: -0.08em;
+}
+
+.tariff-panel p:not(.eyebrow),
+.kids-card p:not(.eyebrow),
+.girls-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.children-girls-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 22px;
+}
+
+.kids-card {
+    padding: clamp(28px, 5vw, 56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.girls-card {
+    min-height: 560px;
+}
+
+.girls-card p {
+    margin-top: 14px;
+    max-width: 620px;
+}
+
+.access-official {
+    padding-bottom: 120px;
+}
+
+/* =========================
+   DOCUMENTS — ONE PAGE
+   ========================= */
+
+.documents-home-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.document-home-card {
+    min-height: 280px;
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 32px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .28);
+    backdrop-filter: blur(22px);
+    box-shadow: var(--shadow);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.document-home-card::after {
+    content: "";
+    position: absolute;
+    right: -90px;
+    bottom: -90px;
+    width: 190px;
+    height: 190px;
+    border-radius: 999px;
+    background: var(--red-soft);
+    filter: blur(18px);
+    opacity: .52;
+}
+
+.document-home-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.document-home-card span {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    background: var(--red);
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    box-shadow: 0 18px 42px rgba(215, 25, 32, .28);
+}
+
+.document-home-card h3 {
+    font-size: 1.45rem;
+    letter-spacing: -0.05em;
+}
+
+.document-home-card p {
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 980px) {
+    .official-section,
+    .official-media-hero {
+        width: calc(100% - 28px);
+        padding: 78px 0;
+    }
+
+    .live-video-wall,
+    .official-split,
+    .discipline-live-grid,
+    .pricing-showcase,
+    .children-girls-grid,
+    .access-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .documents-home-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-heading h2,
+    .media-copy h2,
+    .about-content h2,
+    .practical-card h2,
+    .official-cta-box h2,
+    .tariff-panel h3,
+    .kids-card h2,
+    .girls-card h3 {
+        letter-spacing: -0.065em;
+    }
+
+    .live-main-video,
+    .about-image,
+    .official-poster-card,
+    .girls-card {
+        min-height: 480px;
+    }
+
+    .gallery-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 190px;
+    }
+
+    .gallery-item.wide {
+        grid-column: span 2;
+    }
+
+    .access-official {
+        padding-bottom: 78px;
+    }
+}
+
+@media (max-width: 560px) {
+    .official-section,
+    .official-media-hero {
+        width: calc(100% - 26px);
+        padding: 66px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-heading h2,
+    .media-copy h2,
+    .about-content h2,
+    .practical-card h2,
+    .official-cta-box h2,
+    .tariff-panel h3,
+    .kids-card h2,
+    .girls-card h3 {
+        font-size: clamp(2.25rem, 12vw, 3.6rem);
+        line-height: .92;
+        letter-spacing: -0.06em;
+    }
+
+    .section-heading p:not(.eyebrow),
+    .media-copy p:not(.eyebrow),
+    .about-content p:not(.eyebrow),
+    .practical-card p:not(.eyebrow),
+    .official-cta-box p:not(.eyebrow) {
+        font-size: .95rem;
+        line-height: 1.65;
+    }
+
+    .live-main-video,
+    .about-image,
+    .official-poster-card,
+    .girls-card {
+        min-height: 390px;
+        border-radius: 30px;
+    }
+
+    .live-side-grid,
+    .gallery-mosaic,
+    .documents-home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item,
+    .gallery-item.wide,
+    .gallery-item.tall {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 260px;
+    }
+
+    .about-content,
+    .practical-card,
+    .official-cta-box,
+    .tariff-panel,
+    .kids-card {
+        border-radius: 30px;
+        padding: 24px;
+    }
+
+    .discipline-live-card {
+        min-height: 340px;
+        border-radius: 30px;
+    }
+
+    .access-step {
+        min-height: 240px;
+    }
+
+    .document-home-card {
+        min-height: 230px;
+    }
+
+    .live-caption,
+    .discipline-live-card div,
+    .official-poster-card > div,
+    .girls-card > div {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .live-caption strong {
+        font-size: clamp(2rem, 11vw, 3.1rem);
+    }
+
+    .discipline-live-card h3 {
+        font-size: clamp(1.9rem, 10vw, 3rem);
+    }
+
+    .tariff-grid,
+    .kids-prices {
+        grid-template-columns: 1fr;
+    }
+
+    .tariff-grid div,
+    .kids-prices div {
+        min-height: 102px;
+    }
+
+    .tariff-grid strong,
+    .kids-prices strong {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,80 @@
+.btn {
+    min-height: 54px;
+    padding: 0 24px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: .92rem;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: var(--red);
+    color: var(--white);
+    box-shadow: 0 22px 60px rgba(215,25,32,.28);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 28px 80px rgba(215,25,32,.42);
+}
+
+.btn-ghost {
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.05);
+    color: var(--white);
+}
+
+.btn-ghost:hover {
+    background: rgba(255,255,255,.09);
+}
+
+/* Footer */
+.site-footer {
+    width: min(1180px, calc(100% - 44px));
+    margin: 0 auto 24px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: rgba(255,255,255,.045);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.site-footer p {
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.game-spark {
+    position: fixed;
+    z-index: 9999;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    pointer-events: none;
+    background: var(--red);
+    box-shadow: 0 0 26px rgba(215,25,32,.9);
+    animation: sparkOut .55s ease forwards;
+}
+
+@keyframes sparkOut {
+    to {
+        transform: scale(12);
+        opacity: 0;
+    }
+}
