@@ -41,11 +41,12 @@ jobs:
       - name: Start Laravel server
         run: |
           php artisan serve --host=127.0.0.1 --port=8000 > /tmp/laravel.log 2>&1 &
-          sleep 6
+          sleep 8
 
       - name: Build static preview
         run: |
           mkdir -p _site/contact
+
           cp -R public/assets _site/assets
           cp public/favicon.ico _site/favicon.ico || true
           cp public/robots.txt _site/robots.txt || true
@@ -58,6 +59,7 @@ jobs:
           from pathlib import Path
 
           base = "/tsb-club-manager"
+
           files = [
               Path("_site/index.html"),
               Path("_site/contact/index.html"),
@@ -92,6 +94,8 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
