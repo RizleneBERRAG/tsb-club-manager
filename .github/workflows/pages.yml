@@ -27,16 +27,51 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          extensions: mbstring, dom, fileinfo, mysql
+          extensions: mbstring, dom, fileinfo, mysql, sqlite, pdo_sqlite
           tools: composer
 
       - name: Install Composer dependencies
         run: composer install --no-dev --prefer-dist --no-interaction --no-progress
 
-      - name: Configure Laravel
+      - name: Configure Laravel for static build
         run: |
           cp .env.example .env
           php artisan key:generate
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          env = Path(".env")
+          content = env.read_text()
+
+          replacements = {
+              "APP_ENV=local": "APP_ENV=production",
+              "APP_DEBUG=true": "APP_DEBUG=false",
+              "SESSION_DRIVER=database": "SESSION_DRIVER=file",
+              "CACHE_STORE=database": "CACHE_STORE=file",
+              "QUEUE_CONNECTION=database": "QUEUE_CONNECTION=sync",
+          }
+
+          for old, new in replacements.items():
+              content = content.replace(old, new)
+
+          if "SESSION_DRIVER=" not in content:
+              content += "\nSESSION_DRIVER=file\n"
+
+          if "CACHE_STORE=" not in content:
+              content += "\nCACHE_STORE=file\n"
+
+          if "QUEUE_CONNECTION=" not in content:
+              content += "\nQUEUE_CONNECTION=sync\n"
+
+          content += "\nAPP_URL=https://rizleneberrag.github.io/tsb-club-manager\n"
+
+          env.write_text(content)
+          PY
+
+          php artisan config:clear
+          php artisan route:clear
+          php artisan view:clear
 
       - name: Start Laravel server
         run: |
