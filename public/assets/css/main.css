@@ -1828,3 +1828,531 @@ body.gallery-open {
         margin-top: 10px !important;
     }
 }
+
+
+/* =========================================================
+   INTERACTIVE PLANNING — TSB38
+   ========================================================= */
+
+.tsb-schedule-interface {
+    position: relative;
+}
+
+.tsb-schedule-app {
+    display: grid;
+    grid-template-columns: .72fr 1.28fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.tsb-schedule-left,
+.tsb-schedule-right,
+.tsb-pricing-interface {
+    border-radius: 36px;
+    border: 1px solid rgba(255, 255, 255, .11);
+    background:
+        radial-gradient(circle at 0% 0%, rgba(215, 25, 32, .18), transparent 34%),
+        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .30);
+    box-shadow: var(--shadow);
+}
+
+.tsb-schedule-left {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.tsb-schedule-intro span {
+    color: var(--red);
+    font-size: .72rem;
+    font-weight: 950;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.tsb-schedule-intro h3 {
+    margin-top: 12px;
+    color: #ffffff;
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    line-height: .88;
+    letter-spacing: -0.085em;
+    text-transform: uppercase;
+}
+
+.tsb-schedule-intro p {
+    margin-top: 18px;
+    color: rgba(255, 255, 255, .62);
+    line-height: 1.7;
+}
+
+.tsb-day-tabs {
+    display: grid;
+    gap: 10px;
+}
+
+.tsb-day-tabs button {
+    min-height: 54px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .045);
+    color: rgba(255, 255, 255, .62);
+    font-size: .92rem;
+    font-weight: 900;
+    text-align: left;
+    padding: 0 18px;
+    cursor: pointer;
+    transition:
+        background .22s ease,
+        color .22s ease,
+        border-color .22s ease,
+        transform .22s ease;
+}
+
+.tsb-day-tabs button:hover,
+.tsb-day-tabs button.active {
+    color: #ffffff;
+    background: rgba(215, 25, 32, .16);
+    border-color: rgba(215, 25, 32, .38);
+    transform: translateX(4px);
+}
+
+.tsb-schedule-note {
+    padding: 18px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.tsb-schedule-note strong {
+    display: block;
+    color: #ffffff;
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.tsb-schedule-note span {
+    display: block;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, .56);
+    line-height: 1.5;
+}
+
+.tsb-schedule-right {
+    position: relative;
+    min-height: 580px;
+    padding: 28px;
+    overflow: hidden;
+}
+
+.tsb-day-panel {
+    display: none;
+    animation: tsbPanelIn .35s ease forwards;
+}
+
+.tsb-day-panel.active {
+    display: block;
+}
+
+@keyframes tsbPanelIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tsb-day-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.tsb-day-head span {
+    color: #ffffff;
+    font-size: clamp(3.8rem, 7vw, 7rem);
+    line-height: .8;
+    font-weight: 1000;
+    letter-spacing: -0.1em;
+    text-transform: uppercase;
+}
+
+.tsb-day-head strong {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 999px;
+    background: var(--red);
+    color: #ffffff;
+    font-size: .78rem;
+    font-weight: 950;
+    white-space: nowrap;
+}
+
+.tsb-course-list {
+    display: grid;
+    gap: 14px;
+}
+
+.tsb-course-card {
+    position: relative;
+    min-height: 158px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 20px;
+    padding: 22px;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .025)),
+        rgba(0, 0, 0, .28);
+}
+
+.tsb-course-card::before {
+    content: "";
+    position: absolute;
+    inset: auto -60px -80px auto;
+    width: 190px;
+    height: 190px;
+    border-radius: 999px;
+    opacity: .32;
+    filter: blur(14px);
+    background: var(--red);
+}
+
+.tsb-course-card.beginner::before {
+    background: #1faa6b;
+}
+
+.tsb-course-card.intermediate::before {
+    background: #7a4dff;
+}
+
+.tsb-course-card.competition::before {
+    background: #d71920;
+}
+
+.tsb-course-card.girls::before {
+    background: #e24f9a;
+}
+
+.tsb-course-card div,
+.tsb-course-card > strong {
+    position: relative;
+    z-index: 2;
+}
+
+.tsb-course-card span {
+    color: rgba(255, 255, 255, .52);
+    font-size: .78rem;
+    font-weight: 950;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.tsb-course-card h4 {
+    margin-top: 12px;
+    color: #ffffff;
+    font-size: clamp(1.55rem, 2.4vw, 2.4rem);
+    line-height: .95;
+    letter-spacing: -0.065em;
+}
+
+.tsb-course-card p {
+    margin-top: 10px;
+    max-width: 620px;
+    color: rgba(255, 255, 255, .58);
+    line-height: 1.55;
+}
+
+.tsb-course-card > strong {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .055);
+    color: rgba(255, 255, 255, .78);
+    font-size: .72rem;
+    font-weight: 950;
+    white-space: nowrap;
+}
+
+/* PRICING */
+
+.tsb-pricing-interface {
+    margin-top: 24px;
+    padding: 30px;
+}
+
+.tsb-pricing-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.tsb-pricing-head h3 {
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 4.4rem);
+    line-height: .9;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
+
+.tsb-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.tsb-price-card,
+.tsb-kids-pricing {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background: rgba(255, 255, 255, .04);
+}
+
+.tsb-price-card {
+    min-height: 230px;
+    padding: 22px;
+    display: grid;
+    align-content: space-between;
+}
+
+.tsb-price-card span {
+    width: fit-content;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .06);
+    color: rgba(255, 255, 255, .62);
+    font-size: .64rem;
+    font-weight: 950;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.tsb-price-card h4 {
+    margin-top: 22px;
+    color: #ffffff;
+    font-size: 1.35rem;
+    letter-spacing: -0.05em;
+}
+
+.tsb-price-card strong {
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: clamp(2.8rem, 4.2vw, 4.8rem);
+    line-height: .88;
+    letter-spacing: -0.08em;
+}
+
+.tsb-price-card p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, .52);
+    line-height: 1.45;
+}
+
+.tsb-price-card.best {
+    border-color: rgba(245, 190, 72, .42);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(245, 190, 72, .18), transparent 36%),
+        rgba(255, 255, 255, .045);
+}
+
+.tsb-price-card.best span {
+    background: rgba(245, 190, 72, .16);
+    color: #ffe39a;
+}
+
+.tsb-kids-pricing {
+    margin-top: 16px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.tsb-kids-pricing > div:first-child span {
+    color: var(--red);
+    font-size: .72rem;
+    font-weight: 950;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.tsb-kids-pricing > div:first-child strong {
+    display: block;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 1.45rem;
+    letter-spacing: -0.05em;
+}
+
+.tsb-kids-price-list {
+    display: flex;
+    gap: 10px;
+}
+
+.tsb-kids-price-list article {
+    min-width: 150px;
+    padding: 16px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.tsb-kids-price-list article.best {
+    border-color: rgba(245, 190, 72, .42);
+}
+
+.tsb-kids-price-list small {
+    color: rgba(255, 255, 255, .52);
+    font-size: .72rem;
+    font-weight: 850;
+}
+
+.tsb-kids-price-list strong {
+    display: block;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 2.2rem;
+    line-height: .9;
+    letter-spacing: -0.06em;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1120px) {
+    .tsb-schedule-app {
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-schedule-left {
+        display: grid;
+    }
+
+    .tsb-day-tabs {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .tsb-day-tabs button {
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .tsb-pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .tsb-schedule-left,
+    .tsb-schedule-right,
+    .tsb-pricing-interface {
+        border-radius: 28px;
+        padding: 22px;
+    }
+
+    .tsb-day-tabs {
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 6px;
+        scrollbar-width: none;
+    }
+
+    .tsb-day-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tsb-day-tabs button {
+        flex: 0 0 auto;
+        min-height: 44px;
+        border-radius: 999px;
+        padding: 0 16px;
+        font-size: .8rem;
+    }
+
+    .tsb-day-tabs button:hover,
+    .tsb-day-tabs button.active {
+        transform: none;
+    }
+
+    .tsb-schedule-right {
+        min-height: 0;
+    }
+
+    .tsb-day-head {
+        display: grid;
+        gap: 12px;
+    }
+
+    .tsb-day-head span {
+        font-size: clamp(3rem, 16vw, 4.5rem);
+    }
+
+    .tsb-day-head strong {
+        width: fit-content;
+    }
+
+    .tsb-course-card {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .tsb-course-card > strong {
+        width: fit-content;
+    }
+
+    .tsb-pricing-head {
+        display: grid;
+    }
+
+    .tsb-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-price-card {
+        min-height: 180px;
+    }
+
+    .tsb-kids-pricing {
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-kids-price-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tsb-kids-price-list article {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .tsb-kids-price-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -319,57 +319,215 @@
         </div>
     </section>
 
-    <section class="official-section schedule-pricing-home" id="planning-tarifs">
+    <section class="official-section schedule-pricing-home tsb-schedule-interface" id="planning-tarifs">
         <div class="section-heading reveal">
             <p class="eyebrow">Planning & tarifs</p>
-            <h2>Un accès simple aux cours collectifs et à l’entraînement libre.</h2>
+            <h2>Les horaires officiels du club.</h2>
             <p>
-                Le club propose des créneaux de boxe anglaise, cross training, préparation physique,
-                boxing kids, boxing ados, accès libre et cours collectifs selon le planning.
+                Une lecture simple des créneaux Team Samir Boxing : débutants,
+                intermédiaires, compétition et cours filles uniquement.
             </p>
         </div>
 
-        <div class="pricing-showcase">
-            <article class="official-poster-card reveal">
-                <img src="{{ asset('assets/img/planning-tarifs.jpg') }}" alt="Planning et tarifs Team Samir Boxing">
+        <div class="tsb-schedule-app reveal delay-1">
+            <div class="tsb-schedule-left">
+                <div class="tsb-schedule-intro">
+                    <span>Planning interactif</span>
+                    <h3>Choisir un jour</h3>
+                    <p>
+                        Sélectionnez un jour pour voir directement les cours disponibles,
+                        les horaires et le niveau concerné.
+                    </p>
+                </div>
 
+                <div class="tsb-day-tabs" aria-label="Choisir un jour">
+                    <button type="button" class="active" data-schedule-day="lundi">Lundi</button>
+                    <button type="button" data-schedule-day="mardi">Mardi</button>
+                    <button type="button" data-schedule-day="mercredi">Mercredi</button>
+                    <button type="button" data-schedule-day="jeudi">Jeudi</button>
+                    <button type="button" data-schedule-day="vendredi">Vendredi</button>
+                </div>
+
+                <div class="tsb-schedule-note">
+                    <strong>Adresse du club</strong>
+                    <span>167 Cr de la Libération et du Général de Gaulle, 38100 Grenoble</span>
+                </div>
+            </div>
+
+            <div class="tsb-schedule-right">
+                <div class="tsb-day-panel active" data-schedule-panel="lundi">
+                    <div class="tsb-day-head">
+                        <span>Lundi</span>
+                        <strong>2 créneaux</strong>
+                    </div>
+
+                    <div class="tsb-course-list">
+                        <article class="tsb-course-card beginner">
+                            <div>
+                                <span>18h – 19h</span>
+                                <h4>Cours débutants</h4>
+                                <p>Travail des bases, technique, rythme et progression.</p>
+                            </div>
+                            <strong>Débutants</strong>
+                        </article>
+
+                        <article class="tsb-course-card competition">
+                            <div>
+                                <span>19h – 21h</span>
+                                <h4>Compétition / intermédiaire</h4>
+                                <p>Séance plus intensive pour les profils avancés.</p>
+                            </div>
+                            <strong>Intermédiaire</strong>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tsb-day-panel" data-schedule-panel="mardi">
+                    <div class="tsb-day-head">
+                        <span>Mardi</span>
+                        <strong>1 créneau</strong>
+                    </div>
+
+                    <div class="tsb-course-list">
+                        <article class="tsb-course-card beginner">
+                            <div>
+                                <span>18h – 19h</span>
+                                <h4>Cours débutants</h4>
+                                <p>Apprentissage, bases techniques et encadrement progressif.</p>
+                            </div>
+                            <strong>Débutants</strong>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tsb-day-panel" data-schedule-panel="mercredi">
+                    <div class="tsb-day-head">
+                        <span>Mercredi</span>
+                        <strong>1 créneau</strong>
+                    </div>
+
+                    <div class="tsb-course-list">
+                        <article class="tsb-course-card competition">
+                            <div>
+                                <span>19h – 21h</span>
+                                <h4>Compétition / intermédiaire</h4>
+                                <p>Travail technique, intensité, rythme et préparation.</p>
+                            </div>
+                            <strong>Intermédiaire</strong>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tsb-day-panel" data-schedule-panel="jeudi">
+                    <div class="tsb-day-head">
+                        <span>Jeudi</span>
+                        <strong>2 créneaux</strong>
+                    </div>
+
+                    <div class="tsb-course-list">
+                        <article class="tsb-course-card intermediate">
+                            <div>
+                                <span>18h – 19h</span>
+                                <h4>Cours intermédiaires</h4>
+                                <p>Créneau réservé aux pratiquants avec déjà des bases.</p>
+                            </div>
+                            <strong>Intermédiaire</strong>
+                        </article>
+
+                        <article class="tsb-course-card beginner">
+                            <div>
+                                <span>19h – 20h</span>
+                                <h4>Cours débutants</h4>
+                                <p>Progression technique et apprentissage encadré.</p>
+                            </div>
+                            <strong>Débutants</strong>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tsb-day-panel" data-schedule-panel="vendredi">
+                    <div class="tsb-day-head">
+                        <span>Vendredi</span>
+                        <strong>2 créneaux</strong>
+                    </div>
+
+                    <div class="tsb-course-list">
+                        <article class="tsb-course-card girls">
+                            <div>
+                                <span>18h – 19h</span>
+                                <h4>Cours filles uniquement</h4>
+                                <p>Créneau dédié pour s’entraîner, progresser et prendre confiance.</p>
+                            </div>
+                            <strong>Féminin</strong>
+                        </article>
+
+                        <article class="tsb-course-card competition">
+                            <div>
+                                <span>19h – 21h</span>
+                                <h4>Compétition</h4>
+                                <p>Créneau réservé aux compétiteurs.</p>
+                            </div>
+                            <strong>Compétition</strong>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tsb-pricing-interface reveal delay-2">
+            <div class="tsb-pricing-head">
+                <p class="eyebrow">Tarifs</p>
+                <h3>Un affichage simple des formules.</h3>
+            </div>
+
+            <div class="tsb-pricing-grid">
+                <article class="tsb-price-card">
+                    <span>Découverte</span>
+                    <h4>1 mois</h4>
+                    <strong>100€</strong>
+                    <p>Sans engagement.</p>
+                </article>
+
+                <article class="tsb-price-card">
+                    <span>Progression</span>
+                    <h4>3 mois</h4>
+                    <strong>240€</strong>
+                    <p>Pour installer une vraie régularité.</p>
+                </article>
+
+                <article class="tsb-price-card">
+                    <span>Endurance</span>
+                    <h4>6 mois</h4>
+                    <strong>390€</strong>
+                    <p>Une formule solide pour progresser.</p>
+                </article>
+
+                <article class="tsb-price-card best">
+                    <span>Meilleure valeur</span>
+                    <h4>12 mois</h4>
+                    <strong>470€</strong>
+                    <p>Formule annuelle champion.</p>
+                </article>
+            </div>
+
+            <div class="tsb-kids-pricing">
                 <div>
-                    <span>Planning officiel</span>
-                    <strong>Saison 2024/2025</strong>
+                    <span>Tarifs enfants</span>
+                    <strong>Boxing kids & ados</strong>
                 </div>
-            </article>
 
-            <article class="tariff-panel reveal delay-1">
-                <p class="eyebrow">Tarifs adultes</p>
-                <h3>1 seul tarif avec accès aux cours collectifs.</h3>
-
-                <div class="tariff-grid">
-                    <div>
-                        <span>1 mois</span>
-                        <strong>90€</strong>
-                    </div>
-
-                    <div>
-                        <span>3 mois</span>
+                <div class="tsb-kids-price-list">
+                    <article>
+                        <small>6 mois</small>
                         <strong>220€</strong>
-                    </div>
+                    </article>
 
-                    <div>
-                        <span>6 mois</span>
-                        <strong>370€</strong>
-                    </div>
-
-                    <div>
-                        <span>12 mois</span>
-                        <strong>450€</strong>
-                    </div>
+                    <article class="best">
+                        <small>12 mois</small>
+                        <strong>260€</strong>
+                    </article>
                 </div>
-
-                <p>
-                    Accès aux cours collectifs selon le niveau : débutants, intermédiaires,
-                    confirmés et compétiteurs, avec accès libre selon le planning.
-                </p>
-            </article>
+            </div>
         </div>
     </section>
 
