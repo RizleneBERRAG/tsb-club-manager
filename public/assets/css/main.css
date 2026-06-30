@@ -2356,3 +2356,359 @@ body.gallery-open {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================================================
+   INTERACTIVE PLANNING — RESPONSIVE FINAL
+   ========================================================= */
+
+/* Grand écran */
+@media (min-width: 1280px) {
+    .tsb-schedule-app {
+        grid-template-columns: 0.68fr 1.32fr;
+    }
+
+    .tsb-schedule-right {
+        min-height: 600px;
+    }
+}
+
+/* Tablette / petit laptop */
+@media (max-width: 1120px) {
+    .tsb-schedule-app {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tsb-schedule-left {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .tsb-day-tabs {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+    }
+
+    .tsb-day-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tsb-day-tabs button {
+        flex: 0 0 auto;
+        min-width: 120px;
+        text-align: center;
+        padding: 0 18px;
+    }
+
+    .tsb-day-tabs button:hover,
+    .tsb-day-tabs button.active {
+        transform: none;
+    }
+
+    .tsb-schedule-right {
+        min-height: auto;
+    }
+
+    .tsb-pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Téléphone */
+@media (max-width: 680px) {
+    .tsb-schedule-interface .section-heading {
+        margin-bottom: 26px;
+    }
+
+    .tsb-schedule-app {
+        gap: 16px;
+    }
+
+    .tsb-schedule-left,
+    .tsb-schedule-right,
+    .tsb-pricing-interface {
+        padding: 20px;
+        border-radius: 26px;
+    }
+
+    .tsb-schedule-intro h3 {
+        font-size: clamp(2.4rem, 13vw, 3.7rem);
+        line-height: .88;
+    }
+
+    .tsb-schedule-intro p {
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+    .tsb-day-tabs {
+        margin-left: -4px;
+        margin-right: -4px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .tsb-day-tabs button {
+        min-width: auto;
+        min-height: 44px;
+        padding: 0 15px;
+        border-radius: 999px;
+        font-size: .78rem;
+        white-space: nowrap;
+    }
+
+    .tsb-schedule-note {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .tsb-schedule-note strong {
+        font-size: .72rem;
+    }
+
+    .tsb-schedule-note span {
+        font-size: .84rem;
+    }
+
+    .tsb-day-head {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .tsb-day-head span {
+        font-size: clamp(3rem, 17vw, 4.6rem);
+        line-height: .82;
+        word-break: break-word;
+    }
+
+    .tsb-day-head strong {
+        width: fit-content;
+        min-height: 38px;
+        padding: 0 13px;
+        font-size: .72rem;
+    }
+
+    .tsb-course-list {
+        gap: 12px;
+    }
+
+    .tsb-course-card {
+        grid-template-columns: 1fr;
+        align-items: start;
+        min-height: auto;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .tsb-course-card span {
+        font-size: .68rem;
+    }
+
+    .tsb-course-card h4 {
+        margin-top: 10px;
+        font-size: clamp(1.35rem, 7vw, 2rem);
+        line-height: .95;
+    }
+
+    .tsb-course-card p {
+        font-size: .88rem;
+        line-height: 1.5;
+    }
+
+    .tsb-course-card > strong {
+        width: fit-content;
+        min-height: 38px;
+        font-size: .68rem;
+    }
+
+    .tsb-pricing-interface {
+        margin-top: 18px;
+    }
+
+    .tsb-pricing-head {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .tsb-pricing-head h3 {
+        font-size: clamp(2.2rem, 12vw, 3.7rem);
+    }
+
+    .tsb-pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .tsb-price-card {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .tsb-price-card h4 {
+        margin-top: 18px;
+        font-size: 1.2rem;
+    }
+
+    .tsb-price-card strong {
+        font-size: clamp(2.7rem, 15vw, 4.2rem);
+    }
+
+    .tsb-price-card p {
+        font-size: .88rem;
+    }
+
+    .tsb-kids-pricing {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        border-radius: 22px;
+        gap: 16px;
+    }
+
+    .tsb-kids-pricing > div:first-child strong {
+        font-size: 1.25rem;
+    }
+
+    .tsb-kids-price-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .tsb-kids-price-list article {
+        min-width: 0;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .tsb-kids-price-list strong {
+        font-size: 2rem;
+    }
+}
+
+/* Petit téléphone */
+@media (max-width: 420px) {
+    .tsb-schedule-left,
+    .tsb-schedule-right,
+    .tsb-pricing-interface {
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .tsb-day-tabs button {
+        min-height: 42px;
+        padding: 0 13px;
+        font-size: .72rem;
+    }
+
+    .tsb-day-head span {
+        font-size: clamp(2.6rem, 16vw, 3.8rem);
+    }
+
+    .tsb-course-card {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .tsb-course-card h4 {
+        font-size: 1.32rem;
+    }
+
+    .tsb-course-card p {
+        font-size: .84rem;
+    }
+
+    .tsb-pricing-head h3 {
+        font-size: clamp(2rem, 12vw, 3.1rem);
+    }
+
+    .tsb-price-card strong {
+        font-size: 3rem;
+    }
+
+    .tsb-kids-price-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Très petit écran */
+@media (max-width: 360px) {
+    .tsb-schedule-interface .section-heading h2 {
+        font-size: clamp(2.4rem, 14vw, 3.4rem);
+    }
+
+    .tsb-schedule-intro h3 {
+        font-size: 2.35rem;
+    }
+
+    .tsb-day-head span {
+        font-size: 2.45rem;
+    }
+
+    .tsb-course-card h4 {
+        font-size: 1.22rem;
+    }
+
+    .tsb-price-card strong {
+        font-size: 2.65rem;
+    }
+}
+
+.tsb-day-tabs {
+    -webkit-overflow-scrolling: touch;
+}
+
+.tsb-day-tabs button {
+    touch-action: manipulation;
+}
+
+
+/* =========================================================
+   PLANNING MOBILE DAYS FIX
+   ========================================================= */
+
+@media (max-width: 680px) {
+    .tsb-day-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .tsb-day-tabs button {
+        width: 100% !important;
+        min-width: 0 !important;
+        flex: none !important;
+        min-height: 42px !important;
+        padding: 0 10px !important;
+        border-radius: 999px !important;
+        text-align: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+        font-size: .72rem !important;
+    }
+
+    .tsb-day-tabs button:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 360px) {
+    .tsb-day-tabs {
+        grid-template-columns: 1fr !important;
+    }
+
+    .tsb-day-tabs button:last-child {
+        grid-column: auto;
+    }
+}
