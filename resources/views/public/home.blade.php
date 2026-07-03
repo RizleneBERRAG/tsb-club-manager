@@ -56,7 +56,7 @@
 
                     <div>
                         <small>Féminin</small>
-                        <strong>Vendredi 17h30 — 18h45</strong>
+                        <strong>Vendredi 18h — 19h</strong>
                     </div>
                 </div>
             </aside>
@@ -313,7 +313,7 @@
                 <button class="training-option" type="button" data-training="feminin">
                     <span>04</span>
                     <strong>Espace filles</strong>
-                    <small>Vendredi · 17h30 à 18h45</small>
+                    <small>Vendredi · 18h à 19h</small>
                 </button>
             </div>
         </div>
@@ -324,8 +324,8 @@
             <p class="eyebrow">Planning & tarifs</p>
             <h2>Les horaires officiels du club.</h2>
             <p>
-                Une lecture simple des créneaux Team Samir Boxing : débutants,
-                intermédiaires, compétition et cours filles uniquement.
+                Une lecture simple des créneaux Team Samir Boxing : boxe tous niveaux,
+                cross training, accès libre, débutants, intermédiaires, compétiteurs, filles, kids et ados.
             </p>
         </div>
 
@@ -346,6 +346,7 @@
                     <button type="button" data-schedule-day="mercredi">Mercredi</button>
                     <button type="button" data-schedule-day="jeudi">Jeudi</button>
                     <button type="button" data-schedule-day="vendredi">Vendredi</button>
+                    <button type="button" data-schedule-day="samedi">Samedi</button>
                 </div>
 
                 <div class="tsb-schedule-note">
@@ -358,10 +359,28 @@
                 <div class="tsb-day-panel active" data-schedule-panel="lundi">
                     <div class="tsb-day-head">
                         <span>Lundi</span>
-                        <strong>2 créneaux</strong>
+                        <strong>4 créneaux</strong>
                     </div>
 
                     <div class="tsb-course-list">
+                        <article class="tsb-course-card morning">
+                            <div>
+                                <span>09h – 12h</span>
+                                <h4>Boxe tous niveaux / Cross training</h4>
+                                <p>Créneau du matin ouvert aux pratiquants tous niveaux.</p>
+                            </div>
+                            <strong>Matin</strong>
+                        </article>
+
+                        <article class="tsb-course-card free">
+                            <div>
+                                <span>15h – 18h</span>
+                                <h4>Accès libre</h4>
+                                <p>Créneau libre selon le fonctionnement du club.</p>
+                            </div>
+                            <strong>Accès libre</strong>
+                        </article>
+
                         <article class="tsb-course-card beginner">
                             <div>
                                 <span>18h – 19h</span>
@@ -374,10 +393,10 @@
                         <article class="tsb-course-card competition">
                             <div>
                                 <span>19h – 21h</span>
-                                <h4>Compétition / intermédiaire</h4>
+                                <h4>Compétiteur / Intermédiaire</h4>
                                 <p>Séance plus intensive pour les profils avancés.</p>
                             </div>
-                            <strong>Intermédiaire</strong>
+                            <strong>Compétiteur</strong>
                         </article>
                     </div>
                 </div>
@@ -385,10 +404,28 @@
                 <div class="tsb-day-panel" data-schedule-panel="mardi">
                     <div class="tsb-day-head">
                         <span>Mardi</span>
-                        <strong>1 créneau</strong>
+                        <strong>3 créneaux</strong>
                     </div>
 
                     <div class="tsb-course-list">
+                        <article class="tsb-course-card morning">
+                            <div>
+                                <span>09h – 12h</span>
+                                <h4>Boxe tous niveaux / Cross training</h4>
+                                <p>Créneau du matin ouvert aux pratiquants tous niveaux.</p>
+                            </div>
+                            <strong>Matin</strong>
+                        </article>
+
+                        <article class="tsb-course-card free">
+                            <div>
+                                <span>15h – 18h</span>
+                                <h4>Accès libre</h4>
+                                <p>Créneau libre selon le fonctionnement du club.</p>
+                            </div>
+                            <strong>Accès libre</strong>
+                        </article>
+
                         <article class="tsb-course-card beginner">
                             <div>
                                 <span>18h – 19h</span>
@@ -410,10 +447,10 @@
                         <article class="tsb-course-card competition">
                             <div>
                                 <span>19h – 21h</span>
-                                <h4>Compétition / intermédiaire</h4>
+                                <h4>Compétiteur / Intermédiaire</h4>
                                 <p>Travail technique, intensité, rythme et préparation.</p>
                             </div>
-                            <strong>Intermédiaire</strong>
+                            <strong>Compétiteur</strong>
                         </article>
                     </div>
                 </div>
@@ -421,14 +458,32 @@
                 <div class="tsb-day-panel" data-schedule-panel="jeudi">
                     <div class="tsb-day-head">
                         <span>Jeudi</span>
-                        <strong>2 créneaux</strong>
+                        <strong>4 créneaux</strong>
                     </div>
 
                     <div class="tsb-course-list">
+                        <article class="tsb-course-card morning">
+                            <div>
+                                <span>09h – 12h</span>
+                                <h4>Boxe tous niveaux / Cross training</h4>
+                                <p>Créneau du matin ouvert aux pratiquants tous niveaux.</p>
+                            </div>
+                            <strong>Matin</strong>
+                        </article>
+
+                        <article class="tsb-course-card free">
+                            <div>
+                                <span>15h – 18h</span>
+                                <h4>Accès libre</h4>
+                                <p>Créneau libre selon le fonctionnement du club.</p>
+                            </div>
+                            <strong>Accès libre</strong>
+                        </article>
+
                         <article class="tsb-course-card intermediate">
                             <div>
                                 <span>18h – 19h</span>
-                                <h4>Cours intermédiaires</h4>
+                                <h4>Cours intermédiaire</h4>
                                 <p>Créneau réservé aux pratiquants avec déjà des bases.</p>
                             </div>
                             <strong>Intermédiaire</strong>
@@ -448,10 +503,28 @@
                 <div class="tsb-day-panel" data-schedule-panel="vendredi">
                     <div class="tsb-day-head">
                         <span>Vendredi</span>
-                        <strong>2 créneaux</strong>
+                        <strong>4 créneaux</strong>
                     </div>
 
                     <div class="tsb-course-list">
+                        <article class="tsb-course-card morning">
+                            <div>
+                                <span>09h – 12h</span>
+                                <h4>Boxe tous niveaux / Cross training</h4>
+                                <p>Créneau du matin ouvert aux pratiquants tous niveaux.</p>
+                            </div>
+                            <strong>Matin</strong>
+                        </article>
+
+                        <article class="tsb-course-card free">
+                            <div>
+                                <span>15h – 18h</span>
+                                <h4>Accès libre</h4>
+                                <p>Créneau libre selon le fonctionnement du club.</p>
+                            </div>
+                            <strong>Accès libre</strong>
+                        </article>
+
                         <article class="tsb-course-card girls">
                             <div>
                                 <span>18h – 19h</span>
@@ -464,10 +537,46 @@
                         <article class="tsb-course-card competition">
                             <div>
                                 <span>19h – 21h</span>
-                                <h4>Compétition</h4>
+                                <h4>Compétiteur</h4>
                                 <p>Créneau réservé aux compétiteurs.</p>
                             </div>
-                            <strong>Compétition</strong>
+                            <strong>Compétiteur</strong>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="tsb-day-panel" data-schedule-panel="samedi">
+                    <div class="tsb-day-head">
+                        <span>Samedi</span>
+                        <strong>3 créneaux</strong>
+                    </div>
+
+                    <div class="tsb-course-list">
+                        <article class="tsb-course-card free">
+                            <div>
+                                <span>08h – 10h</span>
+                                <h4>Accès libre</h4>
+                                <p>Créneau libre du samedi matin.</p>
+                            </div>
+                            <strong>Accès libre</strong>
+                        </article>
+
+                        <article class="tsb-course-card kids">
+                            <div>
+                                <span>10h – 11h</span>
+                                <h4>Boxing Kids</h4>
+                                <p>Cours enfants pour les 8–11 ans.</p>
+                            </div>
+                            <strong>8–11 ans</strong>
+                        </article>
+
+                        <article class="tsb-course-card kids">
+                            <div>
+                                <span>11h – 12h</span>
+                                <h4>Boxing Ados</h4>
+                                <p>Cours ados pour les 12–14 ans.</p>
+                            </div>
+                            <strong>12–14 ans</strong>
                         </article>
                     </div>
                 </div>
@@ -545,12 +654,12 @@
                 <div class="kids-prices">
                     <div>
                         <span>6 mois</span>
-                        <strong>200€</strong>
+                        <strong>220€</strong>
                     </div>
 
                     <div>
                         <span>12 mois</span>
-                        <strong>240€</strong>
+                        <strong>260€</strong>
                     </div>
                 </div>
 
@@ -565,7 +674,7 @@
 
                 <div>
                     <span>Espace filles</span>
-                    <h3>Tous les vendredis de 17h30 à 18h45</h3>
+                    <h3>Tous les vendredis de 18h à 19h</h3>
                     <p>
                         Un créneau dédié autour de la boxe, du cross training,
                         du renforcement et de la préparation physique.

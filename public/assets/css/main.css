@@ -9,7 +9,6 @@
 @import url('./hero.css');
 @import url('./home-sections.css');
 @import url('./pages.css');
-@import url('./responsive.css');
 
 /* =========================================================
    GLOBAL SAFETY
@@ -29,7 +28,8 @@ body {
     box-sizing: border-box;
 }
 
-body.gallery-open {
+body.gallery-open,
+body.menu-open {
     overflow: hidden;
 }
 
@@ -40,7 +40,7 @@ body.gallery-open {
 .desktop-nav a.active,
 .mobile-menu-inner a.active,
 .footer-links a.active,
-.tsb-clean-nav a.active {
+.tsb-min-nav a.active {
     color: #ffffff;
 }
 
@@ -64,10 +64,10 @@ body.gallery-open {
    ========================================================= */
 
 .club-slider-showcase {
+    position: relative;
     width: min(1320px, calc(100% - 44px));
     margin: 0 auto;
     padding: 110px 0;
-    position: relative;
     overflow: hidden;
 }
 
@@ -82,17 +82,17 @@ body.gallery-open {
 }
 
 .slider-heading {
-    text-align: center;
-    max-width: 860px;
-    margin: 0 auto 42px;
     position: relative;
     z-index: 2;
+    max-width: 860px;
+    margin: 0 auto 42px;
+    text-align: center;
 }
 
 .slider-heading p:not(.eyebrow) {
-    color: var(--muted);
     max-width: 720px;
     margin: 18px auto 0;
+    color: var(--muted);
     line-height: 1.75;
     font-size: 1.02rem;
 }
@@ -166,8 +166,8 @@ body.gallery-open {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 14px;
     margin-bottom: 16px;
+    padding: 8px 14px;
     border-radius: 999px;
     border: 1px solid rgba(215, 25, 32, .38);
     background: rgba(215, 25, 32, .18);
@@ -180,6 +180,7 @@ body.gallery-open {
 
 .media-card-overlay h3 {
     margin-bottom: 12px;
+    color: #ffffff;
     font-size: clamp(1.75rem, 3vw, 2.55rem);
     line-height: 1;
     letter-spacing: -0.05em;
@@ -368,6 +369,16 @@ body.gallery-open {
     }
 }
 
+@media (max-width: 390px) {
+    .sport-title span {
+        font-size: clamp(2.45rem, 14vw, 3.5rem);
+    }
+
+    .sport-hero-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* =========================================================
    TRAINING SWITCHER
    ========================================================= */
@@ -448,6 +459,7 @@ body.gallery-open {
 
 .training-media-content h3 {
     margin-top: 12px;
+    color: #ffffff;
     font-size: clamp(2.2rem, 5vw, 5.4rem);
     line-height: .88;
     letter-spacing: -0.08em;
@@ -541,6 +553,7 @@ body.gallery-open {
     z-index: 2;
     display: block;
     margin-top: 22px;
+    color: #ffffff;
     font-size: clamp(1.35rem, 2vw, 1.8rem);
     letter-spacing: -0.055em;
 }
@@ -553,6 +566,737 @@ body.gallery-open {
     color: var(--muted);
     line-height: 1.45;
     font-size: .84rem;
+}
+
+/* =========================================================
+   INTERACTIVE PLANNING — PREMIUM AGENDA
+   ========================================================= */
+
+.tsb-schedule-interface {
+    position: relative;
+}
+
+.tsb-schedule-interface .section-heading {
+    max-width: 920px;
+}
+
+.tsb-schedule-app {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+/* LEFT PANEL */
+
+.tsb-schedule-left {
+    position: sticky;
+    top: 104px;
+    padding: 26px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)),
+        rgba(6, 6, 6, .82);
+    box-shadow: 0 26px 80px rgba(0, 0, 0, .42);
+}
+
+.tsb-schedule-intro span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ff3b42;
+    font-size: .68rem;
+    font-weight: 950;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.tsb-schedule-intro span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--red);
+    box-shadow: 0 0 0 6px rgba(215, 25, 32, .12);
+}
+
+.tsb-schedule-intro h3 {
+    margin-top: 18px;
+    color: #ffffff;
+    font-size: clamp(2.05rem, 3vw, 3.25rem);
+    line-height: .92;
+    letter-spacing: -0.07em;
+    text-transform: uppercase;
+}
+
+.tsb-schedule-intro p {
+    margin-top: 18px;
+    color: rgba(255, 255, 255, .58);
+    line-height: 1.7;
+    font-size: .95rem;
+}
+
+/* DAY TABS */
+
+.tsb-day-tabs {
+    display: grid;
+    gap: 9px;
+    margin-top: 28px;
+}
+
+.tsb-day-tabs button {
+    position: relative;
+    min-height: 50px;
+    width: 100%;
+    padding: 0 16px 0 18px;
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),
+        rgba(255,255,255,.02);
+    color: rgba(255, 255, 255, .56);
+    font-size: .9rem;
+    font-weight: 900;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        color .22s ease,
+        border-color .22s ease,
+        background .22s ease,
+        transform .22s ease;
+}
+
+.tsb-day-tabs button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 3px;
+    border-radius: 999px;
+    background: transparent;
+    transition: background .22s ease;
+}
+
+.tsb-day-tabs button:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, .17);
+    transform: translateX(3px);
+}
+
+.tsb-day-tabs button.active {
+    color: #ffffff;
+    border-color: rgba(215, 25, 32, .38);
+    background:
+        linear-gradient(90deg, rgba(215, 25, 32, .20), rgba(255,255,255,.035)),
+        rgba(255,255,255,.02);
+}
+
+.tsb-day-tabs button.active::before {
+    background: var(--red);
+}
+
+/* ADDRESS NOTE */
+
+.tsb-schedule-note {
+    margin-top: 26px;
+    padding: 17px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .035);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.tsb-schedule-note strong {
+    display: block;
+    color: rgba(255, 255, 255, .92);
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.tsb-schedule-note span {
+    display: block;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, .52);
+    font-size: .84rem;
+    line-height: 1.55;
+}
+
+/* RIGHT PANEL */
+
+.tsb-schedule-right {
+    position: relative;
+    min-height: 560px;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 34px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .08), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .018)),
+        rgba(6, 6, 6, .84);
+    box-shadow: 0 26px 80px rgba(0, 0, 0, .42);
+}
+
+.tsb-day-panel {
+    display: none;
+    animation: tsbPanelIn .32s ease forwards;
+}
+
+.tsb-day-panel.active {
+    display: block;
+}
+
+@keyframes tsbPanelIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* DAY HEADER */
+
+.tsb-day-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 22px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.tsb-day-head span {
+    color: #ffffff;
+    font-size: clamp(2.8rem, 5vw, 5.1rem);
+    line-height: .82;
+    font-weight: 1000;
+    letter-spacing: -0.09em;
+    text-transform: uppercase;
+}
+
+.tsb-day-head strong {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 999px;
+    background: rgba(215, 25, 32, .14);
+    border: 1px solid rgba(215, 25, 32, .30);
+    color: #ffffff;
+    font-size: .74rem;
+    font-weight: 950;
+    white-space: nowrap;
+}
+
+/* COURSE LIST — PRO TIMELINE */
+
+.tsb-course-list {
+    position: relative;
+    display: grid;
+    gap: 12px;
+}
+
+.tsb-course-list::before {
+    content: "";
+    position: absolute;
+    left: 104px;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(255, 255, 255, .12),
+        transparent
+    );
+}
+
+.tsb-course-card {
+    position: relative;
+    min-height: 118px;
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    align-items: center;
+    gap: 22px;
+    padding: 18px 20px;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, .085);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .042), rgba(255, 255, 255, .018)),
+        rgba(255, 255, 255, .018);
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        background .22s ease,
+        box-shadow .22s ease;
+}
+
+.tsb-course-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, .15);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .062), rgba(255, 255, 255, .022)),
+        rgba(255, 255, 255, .025);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, .24);
+}
+
+.tsb-course-card::before {
+    content: "";
+    position: absolute;
+    left: 105px;
+    top: 50%;
+    z-index: 2;
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+    background: var(--red);
+    box-shadow: 0 0 0 7px rgba(215, 25, 32, .10);
+}
+
+.tsb-course-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .16;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent 70%, var(--course-color, rgba(215,25,32,.45)));
+}
+
+.tsb-course-card.morning {
+    --course-color: rgba(31, 170, 107, .62);
+}
+
+.tsb-course-card.free {
+    --course-color: rgba(242, 201, 76, .58);
+}
+
+.tsb-course-card.beginner {
+    --course-color: rgba(31, 170, 107, .58);
+}
+
+.tsb-course-card.intermediate {
+    --course-color: rgba(122, 77, 255, .60);
+}
+
+.tsb-course-card.competition {
+    --course-color: rgba(215, 25, 32, .65);
+}
+
+.tsb-course-card.girls {
+    --course-color: rgba(226, 79, 154, .62);
+}
+
+.tsb-course-card.kids {
+    --course-color: rgba(47, 128, 237, .62);
+}
+
+.tsb-course-card span {
+    position: relative;
+    z-index: 3;
+    color: rgba(255, 255, 255, .55);
+    font-size: .8rem;
+    font-weight: 950;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.tsb-course-card div {
+    position: relative;
+    z-index: 3;
+}
+
+.tsb-course-card h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    line-height: 1;
+    letter-spacing: -0.055em;
+}
+
+.tsb-course-card p {
+    max-width: 620px;
+    margin-top: 9px;
+    color: rgba(255, 255, 255, .55);
+    line-height: 1.55;
+    font-size: .93rem;
+}
+
+.tsb-course-card > strong {
+    position: relative;
+    z-index: 3;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .05);
+    color: rgba(255, 255, 255, .76);
+    font-size: .7rem;
+    font-weight: 950;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   PRICING — PREMIUM
+   ========================================================= */
+
+.tsb-pricing-interface {
+    margin-top: 24px;
+    padding: 30px;
+    border-radius: 34px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .08), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .018)),
+        rgba(6, 6, 6, .84);
+    box-shadow: 0 26px 80px rgba(0, 0, 0, .42);
+}
+
+.tsb-pricing-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.tsb-pricing-head h3 {
+    color: #ffffff;
+    font-size: clamp(2.1rem, 4vw, 4rem);
+    line-height: .9;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
+
+.tsb-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.tsb-price-card {
+    position: relative;
+    min-height: 210px;
+    display: grid;
+    align-content: space-between;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, .09);
+    background: rgba(255, 255, 255, .025);
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        background .22s ease;
+}
+
+.tsb-price-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, .16);
+    background: rgba(255, 255, 255, .04);
+}
+
+.tsb-price-card span {
+    width: fit-content;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .055);
+    color: rgba(255, 255, 255, .58);
+    font-size: .62rem;
+    font-weight: 950;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.tsb-price-card h4 {
+    margin-top: 26px;
+    color: rgba(255, 255, 255, .82);
+    font-size: 1.15rem;
+    letter-spacing: -0.04em;
+}
+
+.tsb-price-card strong {
+    display: block;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: clamp(2.5rem, 4vw, 4.2rem);
+    line-height: .88;
+    letter-spacing: -0.08em;
+}
+
+.tsb-price-card p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, .50);
+    line-height: 1.45;
+    font-size: .92rem;
+}
+
+.tsb-price-card.best {
+    border-color: rgba(245, 190, 72, .36);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(245, 190, 72, .12), transparent 35%),
+        rgba(255, 255, 255, .03);
+}
+
+.tsb-price-card.best span {
+    background: rgba(245, 190, 72, .13);
+    color: #ffe39a;
+}
+
+.tsb-kids-pricing {
+    margin-top: 16px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, .09);
+    background: rgba(255, 255, 255, .025);
+}
+
+.tsb-kids-pricing > div:first-child span {
+    color: var(--red);
+    font-size: .7rem;
+    font-weight: 950;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.tsb-kids-pricing > div:first-child strong {
+    display: block;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 1.35rem;
+    letter-spacing: -0.045em;
+}
+
+.tsb-kids-price-list {
+    display: flex;
+    gap: 10px;
+}
+
+.tsb-kids-price-list article {
+    min-width: 145px;
+    padding: 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.tsb-kids-price-list article.best {
+    border-color: rgba(245, 190, 72, .38);
+}
+
+.tsb-kids-price-list small {
+    color: rgba(255, 255, 255, .52);
+    font-size: .72rem;
+    font-weight: 850;
+}
+
+.tsb-kids-price-list strong {
+    display: block;
+    margin-top: 8px;
+    color: #ffffff;
+    font-size: 2.05rem;
+    line-height: .9;
+    letter-spacing: -0.06em;
+}
+
+/* =========================================================
+   PLANNING RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+    .tsb-schedule-app {
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-schedule-left {
+        position: relative;
+        top: auto;
+    }
+
+    .tsb-day-tabs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .tsb-day-tabs button {
+        text-align: center;
+    }
+
+    .tsb-day-tabs button:hover,
+    .tsb-day-tabs button.active {
+        transform: none;
+    }
+
+    .tsb-schedule-right {
+        min-height: auto;
+    }
+
+    .tsb-pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .tsb-schedule-left,
+    .tsb-schedule-right,
+    .tsb-pricing-interface {
+        padding: 20px;
+        border-radius: 26px;
+    }
+
+    .tsb-schedule-intro h3 {
+        font-size: clamp(2.1rem, 12vw, 3.3rem);
+    }
+
+    .tsb-schedule-intro p {
+        font-size: .9rem;
+    }
+
+    .tsb-day-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 22px;
+    }
+
+    .tsb-day-tabs button {
+        min-height: 42px;
+        padding: 0 10px;
+        border-radius: 999px;
+        font-size: .72rem;
+        text-align: center;
+    }
+
+    .tsb-schedule-note {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .tsb-day-head {
+        display: grid;
+        gap: 10px;
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+    }
+
+    .tsb-day-head span {
+        font-size: clamp(2.7rem, 15vw, 4rem);
+    }
+
+    .tsb-day-head strong {
+        width: fit-content;
+        min-height: 36px;
+        font-size: .68rem;
+    }
+
+    .tsb-course-list::before,
+    .tsb-course-card::before {
+        display: none;
+    }
+
+    .tsb-course-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 14px;
+        padding: 17px;
+        border-radius: 20px;
+    }
+
+    .tsb-course-card::after {
+        opacity: .12;
+        background: linear-gradient(180deg, transparent 42%, var(--course-color, rgba(215,25,32,.45)));
+    }
+
+    .tsb-course-card span {
+        font-size: .68rem;
+    }
+
+    .tsb-course-card h4 {
+        font-size: clamp(1.35rem, 7vw, 1.85rem);
+    }
+
+    .tsb-course-card p {
+        font-size: .86rem;
+    }
+
+    .tsb-course-card > strong {
+        width: fit-content;
+        min-height: 34px;
+        font-size: .66rem;
+    }
+
+    .tsb-pricing-head {
+        display: grid;
+        gap: 8px;
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+    }
+
+    .tsb-pricing-head h3 {
+        font-size: clamp(2.1rem, 11vw, 3.2rem);
+    }
+
+    .tsb-pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .tsb-price-card {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .tsb-price-card h4 {
+        margin-top: 18px;
+    }
+
+    .tsb-price-card strong {
+        font-size: clamp(2.6rem, 14vw, 3.8rem);
+    }
+
+    .tsb-kids-pricing {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .tsb-kids-price-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tsb-kids-price-list article {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .tsb-day-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .tsb-kids-price-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =========================================================
@@ -691,6 +1435,7 @@ body.gallery-open {
 
 .gallery-feature-content h3 {
     margin-top: 12px;
+    color: #ffffff;
     font-size: clamp(2.3rem, 4.8vw, 5rem);
     line-height: .88;
     letter-spacing: -0.08em;
@@ -709,6 +1454,7 @@ body.gallery-open {
     bottom: 18px;
     z-index: 2;
 }
+
 .gallery-media-card.is-hidden,
 .gallery-feature-card.is-hidden {
     display: none;
@@ -816,6 +1562,7 @@ body.gallery-open {
 
 .gallery-lightbox-content h3 {
     margin-top: 14px;
+    color: #ffffff;
     font-size: clamp(2rem, 4vw, 4rem);
     line-height: .9;
     letter-spacing: -0.08em;
@@ -829,45 +1576,45 @@ body.gallery-open {
 }
 
 /* =========================================================
-   CLEAN OFFICIAL FOOTER
+   MINIMAL PREMIUM FOOTER
    ========================================================= */
 
-.site-footer.tsb-clean-footer {
+.site-footer.tsb-min-footer {
     display: block !important;
     width: min(1280px, calc(100% - 44px)) !important;
-    margin: 64px auto 24px !important;
+    margin: 58px auto 24px !important;
     padding: 0 !important;
     background: transparent !important;
     border: 0 !important;
 }
 
-.tsb-clean-footer-panel {
+.tsb-min-footer-panel {
     overflow: hidden;
-    border-radius: 26px;
+    border-radius: 28px;
     border: 1px solid rgba(255, 255, 255, .11);
     background:
-        linear-gradient(135deg, rgba(215, 25, 32, .12), transparent 30%),
-        rgba(255, 255, 255, .035);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 20px 70px rgba(0, 0, 0, .42);
+        radial-gradient(circle at 0% 0%, rgba(215, 25, 32, .14), transparent 30%),
+        linear-gradient(135deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)),
+        #070707;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, .42);
 }
 
-.tsb-clean-footer-top {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
+.tsb-min-footer-top {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 28px;
-    padding: 22px 24px;
+    padding: 22px 26px;
 }
 
-.tsb-clean-brand {
+.tsb-min-brand {
     display: inline-flex;
     align-items: center;
     gap: 13px;
     min-width: 0;
 }
 
-.tsb-clean-logo {
+.tsb-min-logo {
     width: 48px;
     height: 48px;
     min-width: 48px;
@@ -878,14 +1625,14 @@ body.gallery-open {
     place-items: center;
 }
 
-.tsb-clean-logo img {
+.tsb-min-logo img {
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: contain;
+    display: block;
 }
 
-.tsb-clean-brand strong {
+.tsb-min-brand strong {
     display: block;
     color: #ffffff;
     font-size: .98rem;
@@ -893,7 +1640,7 @@ body.gallery-open {
     letter-spacing: -0.035em;
 }
 
-.tsb-clean-brand small {
+.tsb-min-brand small {
     display: block;
     margin-top: 6px;
     color: rgba(255, 255, 255, .52);
@@ -901,138 +1648,205 @@ body.gallery-open {
     line-height: 1.25;
 }
 
-.tsb-clean-nav {
-    display: flex !important;
+.tsb-min-actions {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
+    gap: 18px;
 }
 
-.tsb-clean-nav a {
-    min-height: 34px;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 12px;
-    border-radius: 999px;
-    color: rgba(255, 255, 255, .62);
-    font-size: .76rem;
-    font-weight: 850;
-    background: rgba(255, 255, 255, .045);
-    border: 1px solid rgba(255, 255, 255, .08);
-    transition:
-        color .2s ease,
-        background .2s ease,
-        border-color .2s ease;
-}
-
-.tsb-clean-nav a:hover,
-.tsb-clean-nav a.active {
-    color: #ffffff;
-    background: rgba(215, 25, 32, .16);
-    border-color: rgba(215, 25, 32, .32);
-}
-
-.tsb-clean-contact {
+.tsb-min-contact {
     display: grid;
-    gap: 5px;
+    gap: 4px;
     font-style: normal;
     text-align: right;
 }
 
-.tsb-clean-contact a:first-child {
+.tsb-min-contact a:first-child {
     color: #ffffff;
-    font-size: .9rem;
+    font-size: .92rem;
     font-weight: 950;
     white-space: nowrap;
 }
 
-.tsb-clean-contact a:last-child {
-    color: rgba(255, 255, 255, .52);
+.tsb-min-contact a:last-child {
+    color: rgba(255, 255, 255, .48);
     font-size: .76rem;
     font-weight: 750;
     white-space: nowrap;
 }
 
-.tsb-clean-footer-bottom {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 18px;
-    padding: 13px 24px;
-    border-top: 1px solid rgba(255, 255, 255, .08);
-    background: rgba(0, 0, 0, .20);
-}
-
-.tsb-clean-socials {
+.tsb-min-socials {
     display: flex;
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 9px;
 }
 
-.tsb-clean-socials a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 38px;
-    padding: 0 14px;
+.tsb-min-socials a {
+    width: 38px;
+    height: 38px;
     border-radius: 999px;
+    display: grid;
+    place-items: center;
     color: rgba(255, 255, 255, .68);
-    background: rgba(255, 255, 255, .04);
+    background: rgba(255, 255, 255, .045);
     border: 1px solid rgba(255, 255, 255, .08);
     transition:
         transform .2s ease,
         color .2s ease,
         background .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease;
+        border-color .2s ease;
 }
 
-.tsb-clean-socials a:hover {
+.tsb-min-socials a:hover {
     color: #ffffff;
-    background: rgba(215, 25, 32, .14);
-    border-color: rgba(215, 25, 32, .28);
-    box-shadow: 0 10px 24px rgba(215, 25, 32, .12);
     transform: translateY(-1px);
+    background: rgba(215, 25, 32, .15);
+    border-color: rgba(215, 25, 32, .30);
 }
 
-.tsb-clean-socials svg {
+.tsb-min-socials svg {
     width: 16px;
     height: 16px;
     fill: currentColor;
-    flex: 0 0 16px;
 }
 
-.tsb-clean-socials span {
+.tsb-min-footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 22px;
+    padding: 13px 26px;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    background: rgba(0, 0, 0, .18);
+}
+
+.tsb-min-nav {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.tsb-min-nav a {
+    color: rgba(255, 255, 255, .50);
     font-size: .74rem;
     font-weight: 800;
-    letter-spacing: -0.01em;
+    transition: color .2s ease;
 }
 
-.tsb-clean-footer-bottom p {
-    margin: 0;
-    color: rgba(255, 255, 255, .38);
-    font-size: .74rem;
-    text-align: center;
-}
-
-.tsb-clean-toplink {
-    justify-self: end;
-    color: rgba(255, 255, 255, .62);
-    font-size: .74rem;
-    font-weight: 850;
-}
-
-.tsb-clean-toplink:hover {
+.tsb-min-nav a:hover,
+.tsb-min-nav a.active {
     color: #ffffff;
+}
+
+.tsb-min-footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, .34);
+    font-size: .72rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tsb-min-toplink {
+    color: rgba(255, 255, 255, .56);
+    font-size: .72rem;
+    font-weight: 850;
+    white-space: nowrap;
+}
+
+.tsb-min-toplink:hover {
+    color: #ffffff;
+}
+
+/* =========================================================
+   DOCUMENTS + ACCESS ALIGNMENT FIX
+   ========================================================= */
+
+.documents-home-grid,
+.access-steps {
+    align-items: stretch;
+}
+
+.document-home-card {
+    min-height: 310px;
+    display: grid;
+    grid-template-rows: 76px 78px 1fr;
+    align-content: start;
+}
+
+.access-step {
+    min-height: 330px;
+    display: grid;
+    grid-template-rows: 70px 82px 1fr;
+    align-content: start;
+}
+
+.document-home-card > span,
+.access-step > span {
+    align-self: start;
+}
+
+.document-home-card h3,
+.access-step h3 {
+    margin-top: 0 !important;
+    display: flex;
+    align-items: flex-start;
+}
+
+.document-home-card h3 {
+    min-height: 78px;
+}
+
+.access-step h3 {
+    min-height: 82px;
+}
+
+.document-home-card p,
+.access-step p {
+    margin-top: 0 !important;
+    align-self: start;
 }
 
 /* =========================================================
    RESPONSIVE — TABLET
    ========================================================= */
 
-@media (max-width: 980px) {
+@media (max-width: 1120px) {
+    .tsb-schedule-app {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tsb-schedule-left {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .tsb-day-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .tsb-day-tabs button {
+        text-align: center;
+        padding: 0 14px;
+    }
+
+    .tsb-day-tabs button:hover,
+    .tsb-day-tabs button.active {
+        transform: none;
+    }
+
+    .tsb-schedule-right {
+        min-height: auto;
+    }
+
+    .tsb-pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .training-switcher {
         grid-template-columns: 1fr;
     }
@@ -1048,7 +1862,9 @@ body.gallery-open {
     .training-option {
         min-height: 150px;
     }
+}
 
+@media (max-width: 980px) {
     .gallery-studio-grid {
         grid-template-columns: 1fr;
     }
@@ -1080,24 +1896,51 @@ body.gallery-open {
     .media-card-overlay p {
         max-width: 100%;
     }
-}
 
-@media (max-width: 1060px) {
-    .tsb-clean-footer-top {
-        grid-template-columns: 1fr;
-        align-items: start;
+    .document-home-card,
+    .access-step {
+        min-height: auto;
+        grid-template-rows: auto;
     }
 
-    .tsb-clean-nav {
-        justify-content: flex-start;
+    .document-home-card h3,
+    .access-step h3 {
+        min-height: auto;
+        margin-top: 18px !important;
     }
 
-    .tsb-clean-contact {
+    .document-home-card p,
+    .access-step p {
+        margin-top: 12px !important;
+    }
+
+    .tsb-min-footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tsb-min-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .tsb-min-contact {
         text-align: left;
     }
 
-    .tsb-clean-contact a:first-child,
-    .tsb-clean-contact a:last-child {
+    .tsb-min-contact a:first-child,
+    .tsb-min-contact a:last-child {
+        white-space: normal;
+    }
+
+    .tsb-min-footer-bottom {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .tsb-min-footer-bottom p {
+        text-align: left;
         white-space: normal;
     }
 }
@@ -1157,85 +2000,241 @@ body.gallery-open {
     }
 }
 
+@media (max-width: 680px) {
+    .tsb-schedule-interface .section-heading {
+        margin-bottom: 26px;
+    }
+
+    .tsb-schedule-app {
+        gap: 16px;
+    }
+
+    .tsb-schedule-left,
+    .tsb-schedule-right,
+    .tsb-pricing-interface {
+        padding: 20px;
+        border-radius: 26px;
+    }
+
+    .tsb-schedule-intro h3 {
+        font-size: clamp(2.4rem, 13vw, 3.7rem);
+        line-height: .88;
+    }
+
+    .tsb-schedule-intro p {
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+    .tsb-day-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .tsb-day-tabs button {
+        width: 100% !important;
+        min-width: 0 !important;
+        flex: none !important;
+        min-height: 42px !important;
+        padding: 0 10px !important;
+        border-radius: 999px !important;
+        text-align: center !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+        font-size: .72rem !important;
+    }
+
+    .tsb-schedule-note {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .tsb-schedule-note strong {
+        font-size: .72rem;
+    }
+
+    .tsb-schedule-note span {
+        font-size: .84rem;
+    }
+
+    .tsb-day-head {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .tsb-day-head span {
+        font-size: clamp(3rem, 17vw, 4.6rem);
+        line-height: .82;
+        word-break: break-word;
+    }
+
+    .tsb-day-head strong {
+        width: fit-content;
+        min-height: 38px;
+        padding: 0 13px;
+        font-size: .72rem;
+    }
+
+    .tsb-course-list {
+        gap: 12px;
+    }
+
+    .tsb-course-card {
+        grid-template-columns: 1fr;
+        align-items: start;
+        min-height: auto;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .tsb-course-card span {
+        font-size: .68rem;
+    }
+
+    .tsb-course-card h4 {
+        margin-top: 10px;
+        font-size: clamp(1.35rem, 7vw, 2rem);
+        line-height: .95;
+    }
+
+    .tsb-course-card p {
+        font-size: .88rem;
+        line-height: 1.5;
+    }
+
+    .tsb-course-card > strong {
+        width: fit-content;
+        min-height: 38px;
+        font-size: .68rem;
+    }
+
+    .tsb-pricing-interface {
+        margin-top: 18px;
+    }
+
+    .tsb-pricing-head {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .tsb-pricing-head h3 {
+        font-size: clamp(2.2rem, 12vw, 3.7rem);
+    }
+
+    .tsb-pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .tsb-price-card {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .tsb-price-card h4 {
+        margin-top: 18px;
+        font-size: 1.2rem;
+    }
+
+    .tsb-price-card strong {
+        font-size: clamp(2.7rem, 15vw, 4.2rem);
+    }
+
+    .tsb-price-card p {
+        font-size: .88rem;
+    }
+
+    .tsb-kids-pricing {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        border-radius: 22px;
+        gap: 16px;
+    }
+
+    .tsb-kids-pricing > div:first-child strong {
+        font-size: 1.25rem;
+    }
+
+    .tsb-kids-price-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .tsb-kids-price-list article {
+        min-width: 0;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .tsb-kids-price-list strong {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 640px) {
-    .site-footer.tsb-clean-footer {
+    .site-footer.tsb-min-footer {
         width: calc(100% - 24px) !important;
         margin: 48px auto 18px !important;
     }
 
-    .tsb-clean-footer-panel {
+    .tsb-min-footer-panel {
         border-radius: 22px;
     }
 
-    .tsb-clean-footer-top {
-        gap: 18px;
+    .tsb-min-footer-top {
         padding: 18px;
+        gap: 18px;
     }
 
-    .tsb-clean-brand {
-        align-items: flex-start;
-    }
-
-    .tsb-clean-logo {
+    .tsb-min-logo {
         width: 46px;
         height: 46px;
         min-width: 46px;
         border-radius: 14px;
     }
 
-    .tsb-clean-brand strong {
+    .tsb-min-brand {
+        align-items: flex-start;
+    }
+
+    .tsb-min-brand strong {
         font-size: .94rem;
     }
 
-    .tsb-clean-brand small {
+    .tsb-min-brand small {
         font-size: .7rem;
     }
 
-    .tsb-clean-nav {
-        gap: 7px;
-    }
-
-    .tsb-clean-nav a {
-        min-height: 32px;
-        padding: 0 10px;
-        font-size: .7rem;
-    }
-
-    .tsb-clean-footer-bottom {
+    .tsb-min-actions {
+        display: grid;
         grid-template-columns: 1fr;
-        align-items: start;
-        gap: 10px;
-        padding: 14px 18px;
+        gap: 14px;
     }
 
-    .tsb-clean-socials {
+    .tsb-min-socials {
         gap: 8px;
     }
 
-    .tsb-clean-socials a {
+    .tsb-min-socials a {
         width: 38px;
         height: 38px;
-        min-height: 38px;
-        padding: 0;
-        justify-content: center;
-        border-radius: 999px;
     }
 
-    .tsb-clean-socials svg {
-        width: 17px;
-        height: 17px;
+    .tsb-min-footer-bottom {
+        padding: 14px 18px;
     }
 
-    .tsb-clean-socials span {
-        display: none;
-    }
-
-    .tsb-clean-footer-bottom p {
-        text-align: left;
-    }
-
-    .tsb-clean-toplink {
-        justify-self: start;
+    .tsb-min-nav {
+        gap: 10px 14px;
     }
 }
 
@@ -1460,15 +2459,51 @@ body.gallery-open {
     }
 }
 
-@media (max-width: 390px) {
-    .sport-title span {
-        font-size: clamp(2.45rem, 14vw, 3.5rem);
+@media (max-width: 420px) {
+    .tsb-schedule-left,
+    .tsb-schedule-right,
+    .tsb-pricing-interface {
+        padding: 18px;
+        border-radius: 24px;
     }
 
-    .sport-hero-bottom {
+    .tsb-day-tabs button {
+        min-height: 42px !important;
+        padding: 0 10px !important;
+        font-size: .68rem !important;
+    }
+
+    .tsb-day-head span {
+        font-size: clamp(2.6rem, 16vw, 3.8rem);
+    }
+
+    .tsb-course-card {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .tsb-course-card h4 {
+        font-size: 1.32rem;
+    }
+
+    .tsb-course-card p {
+        font-size: .84rem;
+    }
+
+    .tsb-pricing-head h3 {
+        font-size: clamp(2rem, 12vw, 3.1rem);
+    }
+
+    .tsb-price-card strong {
+        font-size: 3rem;
+    }
+
+    .tsb-kids-price-list {
         grid-template-columns: 1fr;
     }
+}
 
+@media (max-width: 390px) {
     .coverflow-card,
     .media-card-visual {
         min-height: 390px;
@@ -1508,1138 +2543,6 @@ body.gallery-open {
     }
 }
 
-/* =========================================================
-   MINIMAL PREMIUM FOOTER — TEAM SAMIR BOXING
-   ========================================================= */
-
-.site-footer.tsb-min-footer {
-    display: block !important;
-    width: min(1280px, calc(100% - 44px)) !important;
-    margin: 58px auto 24px !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: 0 !important;
-}
-
-.tsb-min-footer-panel {
-    overflow: hidden;
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, .11);
-    background:
-        radial-gradient(circle at 0% 0%, rgba(215, 25, 32, .14), transparent 30%),
-        linear-gradient(135deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)),
-        #070707;
-    box-shadow: 0 22px 70px rgba(0, 0, 0, .42);
-}
-
-.tsb-min-footer-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 28px;
-    padding: 22px 26px;
-}
-
-.tsb-min-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 13px;
-    min-width: 0;
-}
-
-.tsb-min-logo {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    padding: 5px;
-    border-radius: 15px;
-    background: #ffffff;
-    display: grid;
-    place-items: center;
-}
-
-.tsb-min-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-.tsb-min-brand strong {
-    display: block;
-    color: #ffffff;
-    font-size: .98rem;
-    line-height: 1;
-    letter-spacing: -0.035em;
-}
-
-.tsb-min-brand small {
-    display: block;
-    margin-top: 6px;
-    color: rgba(255, 255, 255, .52);
-    font-size: .76rem;
-    line-height: 1.25;
-}
-
-.tsb-min-actions {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.tsb-min-contact {
-    display: grid;
-    gap: 4px;
-    font-style: normal;
-    text-align: right;
-}
-
-.tsb-min-contact a:first-child {
-    color: #ffffff;
-    font-size: .92rem;
-    font-weight: 950;
-    white-space: nowrap;
-}
-
-.tsb-min-contact a:last-child {
-    color: rgba(255, 255, 255, .48);
-    font-size: .76rem;
-    font-weight: 750;
-    white-space: nowrap;
-}
-
-.tsb-min-socials {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-}
-
-.tsb-min-socials a {
-    width: 38px;
-    height: 38px;
-    border-radius: 999px;
-    display: grid;
-    place-items: center;
-    color: rgba(255, 255, 255, .68);
-    background: rgba(255, 255, 255, .045);
-    border: 1px solid rgba(255, 255, 255, .08);
-    transition:
-        transform .2s ease,
-        color .2s ease,
-        background .2s ease,
-        border-color .2s ease;
-}
-
-.tsb-min-socials a:hover {
-    color: #ffffff;
-    transform: translateY(-1px);
-    background: rgba(215, 25, 32, .15);
-    border-color: rgba(215, 25, 32, .30);
-}
-
-.tsb-min-socials svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-}
-
-.tsb-min-footer-bottom {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    align-items: center;
-    gap: 22px;
-    padding: 13px 26px;
-    border-top: 1px solid rgba(255, 255, 255, .08);
-    background: rgba(0, 0, 0, .18);
-}
-
-.tsb-min-nav {
-    display: flex !important;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-.tsb-min-nav a {
-    color: rgba(255, 255, 255, .50);
-    font-size: .74rem;
-    font-weight: 800;
-    transition: color .2s ease;
-}
-
-.tsb-min-nav a:hover,
-.tsb-min-nav a.active {
-    color: #ffffff;
-}
-
-.tsb-min-footer-bottom p {
-    margin: 0;
-    color: rgba(255, 255, 255, .34);
-    font-size: .72rem;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.tsb-min-toplink {
-    color: rgba(255, 255, 255, .56);
-    font-size: .72rem;
-    font-weight: 850;
-    white-space: nowrap;
-}
-
-.tsb-min-toplink:hover {
-    color: #ffffff;
-}
-
-/* Responsive */
-@media (max-width: 980px) {
-    .tsb-min-footer-top {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .tsb-min-actions {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .tsb-min-contact {
-        text-align: left;
-    }
-
-    .tsb-min-contact a:first-child,
-    .tsb-min-contact a:last-child {
-        white-space: normal;
-    }
-
-    .tsb-min-footer-bottom {
-        grid-template-columns: 1fr;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .tsb-min-footer-bottom p {
-        text-align: left;
-        white-space: normal;
-    }
-}
-
-@media (max-width: 640px) {
-    .site-footer.tsb-min-footer {
-        width: calc(100% - 24px) !important;
-        margin: 48px auto 18px !important;
-    }
-
-    .tsb-min-footer-panel {
-        border-radius: 22px;
-    }
-
-    .tsb-min-footer-top {
-        padding: 18px;
-        gap: 18px;
-    }
-
-    .tsb-min-logo {
-        width: 46px;
-        height: 46px;
-        min-width: 46px;
-        border-radius: 14px;
-    }
-
-    .tsb-min-brand {
-        align-items: flex-start;
-    }
-
-    .tsb-min-brand strong {
-        font-size: .94rem;
-    }
-
-    .tsb-min-brand small {
-        font-size: .7rem;
-    }
-
-    .tsb-min-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 14px;
-    }
-
-    .tsb-min-socials {
-        gap: 8px;
-    }
-
-    .tsb-min-socials a {
-        width: 38px;
-        height: 38px;
-    }
-
-    .tsb-min-footer-bottom {
-        padding: 14px 18px;
-    }
-
-    .tsb-min-nav {
-        gap: 10px 14px;
-    }
-}
-
-/* =========================================================
-   ACCESS STEPS — ALIGNMENT FIX
-   ========================================================= */
-
-.access-steps {
-    align-items: stretch;
-}
-
-.access-step {
-    min-height: 330px;
-    display: grid;
-    grid-template-rows: 70px 82px 1fr;
-    align-content: start;
-}
-
-.access-step > span {
-    align-self: start;
-}
-
-.access-step h3 {
-    margin-top: 0 !important;
-    display: flex;
-    align-items: flex-start;
-    min-height: 82px;
-}
-
-.access-step p {
-    margin-top: 0 !important;
-    align-self: start;
-}
-
-@media (max-width: 980px) {
-    .access-step {
-        min-height: auto;
-        grid-template-rows: auto;
-    }
-
-    .access-step h3 {
-        min-height: auto;
-        margin-top: 18px !important;
-    }
-
-    .access-step p {
-        margin-top: 10px !important;
-    }
-}
-
-
-/* =========================================================
-   INTERACTIVE PLANNING — TSB38
-   ========================================================= */
-
-.tsb-schedule-interface {
-    position: relative;
-}
-
-.tsb-schedule-app {
-    display: grid;
-    grid-template-columns: .72fr 1.28fr;
-    gap: 22px;
-    align-items: stretch;
-}
-
-.tsb-schedule-left,
-.tsb-schedule-right,
-.tsb-pricing-interface {
-    border-radius: 36px;
-    border: 1px solid rgba(255, 255, 255, .11);
-    background:
-        radial-gradient(circle at 0% 0%, rgba(215, 25, 32, .18), transparent 34%),
-        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .025)),
-        rgba(0, 0, 0, .30);
-    box-shadow: var(--shadow);
-}
-
-.tsb-schedule-left {
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 28px;
-}
-
-.tsb-schedule-intro span {
-    color: var(--red);
-    font-size: .72rem;
-    font-weight: 950;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-}
-
-.tsb-schedule-intro h3 {
-    margin-top: 12px;
-    color: #ffffff;
-    font-size: clamp(2.2rem, 4vw, 4.5rem);
-    line-height: .88;
-    letter-spacing: -0.085em;
-    text-transform: uppercase;
-}
-
-.tsb-schedule-intro p {
-    margin-top: 18px;
-    color: rgba(255, 255, 255, .62);
-    line-height: 1.7;
-}
-
-.tsb-day-tabs {
-    display: grid;
-    gap: 10px;
-}
-
-.tsb-day-tabs button {
-    min-height: 54px;
-    width: 100%;
-    border: 1px solid rgba(255, 255, 255, .10);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, .045);
-    color: rgba(255, 255, 255, .62);
-    font-size: .92rem;
-    font-weight: 900;
-    text-align: left;
-    padding: 0 18px;
-    cursor: pointer;
-    transition:
-        background .22s ease,
-        color .22s ease,
-        border-color .22s ease,
-        transform .22s ease;
-}
-
-.tsb-day-tabs button:hover,
-.tsb-day-tabs button.active {
-    color: #ffffff;
-    background: rgba(215, 25, 32, .16);
-    border-color: rgba(215, 25, 32, .38);
-    transform: translateX(4px);
-}
-
-.tsb-schedule-note {
-    padding: 18px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, .045);
-    border: 1px solid rgba(255, 255, 255, .08);
-}
-
-.tsb-schedule-note strong {
-    display: block;
-    color: #ffffff;
-    font-size: .82rem;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-}
-
-.tsb-schedule-note span {
-    display: block;
-    margin-top: 8px;
-    color: rgba(255, 255, 255, .56);
-    line-height: 1.5;
-}
-
-.tsb-schedule-right {
-    position: relative;
-    min-height: 580px;
-    padding: 28px;
-    overflow: hidden;
-}
-
-.tsb-day-panel {
-    display: none;
-    animation: tsbPanelIn .35s ease forwards;
-}
-
-.tsb-day-panel.active {
-    display: block;
-}
-
-@keyframes tsbPanelIn {
-    from {
-        opacity: 0;
-        transform: translateY(14px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.tsb-day-head {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 18px;
-    margin-bottom: 22px;
-}
-
-.tsb-day-head span {
-    color: #ffffff;
-    font-size: clamp(3.8rem, 7vw, 7rem);
-    line-height: .8;
-    font-weight: 1000;
-    letter-spacing: -0.1em;
-    text-transform: uppercase;
-}
-
-.tsb-day-head strong {
-    min-height: 42px;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 15px;
-    border-radius: 999px;
-    background: var(--red);
-    color: #ffffff;
-    font-size: .78rem;
-    font-weight: 950;
-    white-space: nowrap;
-}
-
-.tsb-course-list {
-    display: grid;
-    gap: 14px;
-}
-
-.tsb-course-card {
-    position: relative;
-    min-height: 158px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
-    gap: 20px;
-    padding: 22px;
-    overflow: hidden;
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, .10);
-    background:
-        linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .025)),
-        rgba(0, 0, 0, .28);
-}
-
-.tsb-course-card::before {
-    content: "";
-    position: absolute;
-    inset: auto -60px -80px auto;
-    width: 190px;
-    height: 190px;
-    border-radius: 999px;
-    opacity: .32;
-    filter: blur(14px);
-    background: var(--red);
-}
-
-.tsb-course-card.beginner::before {
-    background: #1faa6b;
-}
-
-.tsb-course-card.intermediate::before {
-    background: #7a4dff;
-}
-
-.tsb-course-card.competition::before {
-    background: #d71920;
-}
-
-.tsb-course-card.girls::before {
-    background: #e24f9a;
-}
-
-.tsb-course-card div,
-.tsb-course-card > strong {
-    position: relative;
-    z-index: 2;
-}
-
-.tsb-course-card span {
-    color: rgba(255, 255, 255, .52);
-    font-size: .78rem;
-    font-weight: 950;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
-
-.tsb-course-card h4 {
-    margin-top: 12px;
-    color: #ffffff;
-    font-size: clamp(1.55rem, 2.4vw, 2.4rem);
-    line-height: .95;
-    letter-spacing: -0.065em;
-}
-
-.tsb-course-card p {
-    margin-top: 10px;
-    max-width: 620px;
-    color: rgba(255, 255, 255, .58);
-    line-height: 1.55;
-}
-
-.tsb-course-card > strong {
-    min-height: 42px;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 13px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, .12);
-    background: rgba(255, 255, 255, .055);
-    color: rgba(255, 255, 255, .78);
-    font-size: .72rem;
-    font-weight: 950;
-    white-space: nowrap;
-}
-
-/* PRICING */
-
-.tsb-pricing-interface {
-    margin-top: 24px;
-    padding: 30px;
-}
-
-.tsb-pricing-head {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 22px;
-}
-
-.tsb-pricing-head h3 {
-    color: #ffffff;
-    font-size: clamp(2rem, 4vw, 4.4rem);
-    line-height: .9;
-    letter-spacing: -0.08em;
-    text-transform: uppercase;
-}
-
-.tsb-pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-}
-
-.tsb-price-card,
-.tsb-kids-pricing {
-    position: relative;
-    overflow: hidden;
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, .10);
-    background: rgba(255, 255, 255, .04);
-}
-
-.tsb-price-card {
-    min-height: 230px;
-    padding: 22px;
-    display: grid;
-    align-content: space-between;
-}
-
-.tsb-price-card span {
-    width: fit-content;
-    padding: 8px 11px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, .06);
-    color: rgba(255, 255, 255, .62);
-    font-size: .64rem;
-    font-weight: 950;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
-
-.tsb-price-card h4 {
-    margin-top: 22px;
-    color: #ffffff;
-    font-size: 1.35rem;
-    letter-spacing: -0.05em;
-}
-
-.tsb-price-card strong {
-    margin-top: 8px;
-    color: #ffffff;
-    font-size: clamp(2.8rem, 4.2vw, 4.8rem);
-    line-height: .88;
-    letter-spacing: -0.08em;
-}
-
-.tsb-price-card p {
-    margin-top: 12px;
-    color: rgba(255, 255, 255, .52);
-    line-height: 1.45;
-}
-
-.tsb-price-card.best {
-    border-color: rgba(245, 190, 72, .42);
-    background:
-        radial-gradient(circle at 100% 0%, rgba(245, 190, 72, .18), transparent 36%),
-        rgba(255, 255, 255, .045);
-}
-
-.tsb-price-card.best span {
-    background: rgba(245, 190, 72, .16);
-    color: #ffe39a;
-}
-
-.tsb-kids-pricing {
-    margin-top: 16px;
-    padding: 22px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 20px;
-}
-
-.tsb-kids-pricing > div:first-child span {
-    color: var(--red);
-    font-size: .72rem;
-    font-weight: 950;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-}
-
-.tsb-kids-pricing > div:first-child strong {
-    display: block;
-    margin-top: 8px;
-    color: #ffffff;
-    font-size: 1.45rem;
-    letter-spacing: -0.05em;
-}
-
-.tsb-kids-price-list {
-    display: flex;
-    gap: 10px;
-}
-
-.tsb-kids-price-list article {
-    min-width: 150px;
-    padding: 16px;
-    border-radius: 22px;
-    background: rgba(255, 255, 255, .045);
-    border: 1px solid rgba(255, 255, 255, .08);
-}
-
-.tsb-kids-price-list article.best {
-    border-color: rgba(245, 190, 72, .42);
-}
-
-.tsb-kids-price-list small {
-    color: rgba(255, 255, 255, .52);
-    font-size: .72rem;
-    font-weight: 850;
-}
-
-.tsb-kids-price-list strong {
-    display: block;
-    margin-top: 8px;
-    color: #ffffff;
-    font-size: 2.2rem;
-    line-height: .9;
-    letter-spacing: -0.06em;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 1120px) {
-    .tsb-schedule-app {
-        grid-template-columns: 1fr;
-    }
-
-    .tsb-schedule-left {
-        display: grid;
-    }
-
-    .tsb-day-tabs {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .tsb-day-tabs button {
-        text-align: center;
-        padding: 0 10px;
-    }
-
-    .tsb-pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 680px) {
-    .tsb-schedule-left,
-    .tsb-schedule-right,
-    .tsb-pricing-interface {
-        border-radius: 28px;
-        padding: 22px;
-    }
-
-    .tsb-day-tabs {
-        display: flex;
-        overflow-x: auto;
-        gap: 8px;
-        padding-bottom: 6px;
-        scrollbar-width: none;
-    }
-
-    .tsb-day-tabs::-webkit-scrollbar {
-        display: none;
-    }
-
-    .tsb-day-tabs button {
-        flex: 0 0 auto;
-        min-height: 44px;
-        border-radius: 999px;
-        padding: 0 16px;
-        font-size: .8rem;
-    }
-
-    .tsb-day-tabs button:hover,
-    .tsb-day-tabs button.active {
-        transform: none;
-    }
-
-    .tsb-schedule-right {
-        min-height: 0;
-    }
-
-    .tsb-day-head {
-        display: grid;
-        gap: 12px;
-    }
-
-    .tsb-day-head span {
-        font-size: clamp(3rem, 16vw, 4.5rem);
-    }
-
-    .tsb-day-head strong {
-        width: fit-content;
-    }
-
-    .tsb-course-card {
-        grid-template-columns: 1fr;
-        min-height: 0;
-        padding: 18px;
-        border-radius: 24px;
-    }
-
-    .tsb-course-card > strong {
-        width: fit-content;
-    }
-
-    .tsb-pricing-head {
-        display: grid;
-    }
-
-    .tsb-pricing-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tsb-price-card {
-        min-height: 180px;
-    }
-
-    .tsb-kids-pricing {
-        grid-template-columns: 1fr;
-    }
-
-    .tsb-kids-price-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .tsb-kids-price-list article {
-        min-width: 0;
-    }
-}
-
-@media (max-width: 390px) {
-    .tsb-kids-price-list {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* =========================================================
-   INTERACTIVE PLANNING — RESPONSIVE FINAL
-   ========================================================= */
-
-/* Grand écran */
-@media (min-width: 1280px) {
-    .tsb-schedule-app {
-        grid-template-columns: 0.68fr 1.32fr;
-    }
-
-    .tsb-schedule-right {
-        min-height: 600px;
-    }
-}
-
-/* Tablette / petit laptop */
-@media (max-width: 1120px) {
-    .tsb-schedule-app {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .tsb-schedule-left {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 22px;
-    }
-
-    .tsb-day-tabs {
-        display: flex;
-        overflow-x: auto;
-        gap: 10px;
-        padding-bottom: 8px;
-        scrollbar-width: none;
-    }
-
-    .tsb-day-tabs::-webkit-scrollbar {
-        display: none;
-    }
-
-    .tsb-day-tabs button {
-        flex: 0 0 auto;
-        min-width: 120px;
-        text-align: center;
-        padding: 0 18px;
-    }
-
-    .tsb-day-tabs button:hover,
-    .tsb-day-tabs button.active {
-        transform: none;
-    }
-
-    .tsb-schedule-right {
-        min-height: auto;
-    }
-
-    .tsb-pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Téléphone */
-@media (max-width: 680px) {
-    .tsb-schedule-interface .section-heading {
-        margin-bottom: 26px;
-    }
-
-    .tsb-schedule-app {
-        gap: 16px;
-    }
-
-    .tsb-schedule-left,
-    .tsb-schedule-right,
-    .tsb-pricing-interface {
-        padding: 20px;
-        border-radius: 26px;
-    }
-
-    .tsb-schedule-intro h3 {
-        font-size: clamp(2.4rem, 13vw, 3.7rem);
-        line-height: .88;
-    }
-
-    .tsb-schedule-intro p {
-        font-size: .9rem;
-        line-height: 1.6;
-    }
-
-    .tsb-day-tabs {
-        margin-left: -4px;
-        margin-right: -4px;
-        padding-left: 4px;
-        padding-right: 4px;
-    }
-
-    .tsb-day-tabs button {
-        min-width: auto;
-        min-height: 44px;
-        padding: 0 15px;
-        border-radius: 999px;
-        font-size: .78rem;
-        white-space: nowrap;
-    }
-
-    .tsb-schedule-note {
-        padding: 15px;
-        border-radius: 20px;
-    }
-
-    .tsb-schedule-note strong {
-        font-size: .72rem;
-    }
-
-    .tsb-schedule-note span {
-        font-size: .84rem;
-    }
-
-    .tsb-day-head {
-        display: grid;
-        gap: 12px;
-        margin-bottom: 18px;
-    }
-
-    .tsb-day-head span {
-        font-size: clamp(3rem, 17vw, 4.6rem);
-        line-height: .82;
-        word-break: break-word;
-    }
-
-    .tsb-day-head strong {
-        width: fit-content;
-        min-height: 38px;
-        padding: 0 13px;
-        font-size: .72rem;
-    }
-
-    .tsb-course-list {
-        gap: 12px;
-    }
-
-    .tsb-course-card {
-        grid-template-columns: 1fr;
-        align-items: start;
-        min-height: auto;
-        gap: 16px;
-        padding: 18px;
-        border-radius: 22px;
-    }
-
-    .tsb-course-card span {
-        font-size: .68rem;
-    }
-
-    .tsb-course-card h4 {
-        margin-top: 10px;
-        font-size: clamp(1.35rem, 7vw, 2rem);
-        line-height: .95;
-    }
-
-    .tsb-course-card p {
-        font-size: .88rem;
-        line-height: 1.5;
-    }
-
-    .tsb-course-card > strong {
-        width: fit-content;
-        min-height: 38px;
-        font-size: .68rem;
-    }
-
-    .tsb-pricing-interface {
-        margin-top: 18px;
-    }
-
-    .tsb-pricing-head {
-        display: grid;
-        gap: 8px;
-        margin-bottom: 18px;
-    }
-
-    .tsb-pricing-head h3 {
-        font-size: clamp(2.2rem, 12vw, 3.7rem);
-    }
-
-    .tsb-pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .tsb-price-card {
-        min-height: auto;
-        padding: 18px;
-        border-radius: 22px;
-    }
-
-    .tsb-price-card h4 {
-        margin-top: 18px;
-        font-size: 1.2rem;
-    }
-
-    .tsb-price-card strong {
-        font-size: clamp(2.7rem, 15vw, 4.2rem);
-    }
-
-    .tsb-price-card p {
-        font-size: .88rem;
-    }
-
-    .tsb-kids-pricing {
-        grid-template-columns: 1fr;
-        padding: 18px;
-        border-radius: 22px;
-        gap: 16px;
-    }
-
-    .tsb-kids-pricing > div:first-child strong {
-        font-size: 1.25rem;
-    }
-
-    .tsb-kids-price-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .tsb-kids-price-list article {
-        min-width: 0;
-        padding: 15px;
-        border-radius: 20px;
-    }
-
-    .tsb-kids-price-list strong {
-        font-size: 2rem;
-    }
-}
-
-/* Petit téléphone */
-@media (max-width: 420px) {
-    .tsb-schedule-left,
-    .tsb-schedule-right,
-    .tsb-pricing-interface {
-        padding: 18px;
-        border-radius: 24px;
-    }
-
-    .tsb-day-tabs button {
-        min-height: 42px;
-        padding: 0 13px;
-        font-size: .72rem;
-    }
-
-    .tsb-day-head span {
-        font-size: clamp(2.6rem, 16vw, 3.8rem);
-    }
-
-    .tsb-course-card {
-        padding: 16px;
-        border-radius: 20px;
-    }
-
-    .tsb-course-card h4 {
-        font-size: 1.32rem;
-    }
-
-    .tsb-course-card p {
-        font-size: .84rem;
-    }
-
-    .tsb-pricing-head h3 {
-        font-size: clamp(2rem, 12vw, 3.1rem);
-    }
-
-    .tsb-price-card strong {
-        font-size: 3rem;
-    }
-
-    .tsb-kids-price-list {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Très petit écran */
 @media (max-width: 360px) {
     .tsb-schedule-interface .section-heading h2 {
         font-size: clamp(2.4rem, 14vw, 3.4rem);
@@ -2647,6 +2550,10 @@ body.gallery-open {
 
     .tsb-schedule-intro h3 {
         font-size: 2.35rem;
+    }
+
+    .tsb-day-tabs {
+        grid-template-columns: 1fr !important;
     }
 
     .tsb-day-head span {
@@ -2662,53 +2569,126 @@ body.gallery-open {
     }
 }
 
-.tsb-day-tabs {
-    -webkit-overflow-scrolling: touch;
-}
-
-.tsb-day-tabs button {
-    touch-action: manipulation;
-}
-
 
 /* =========================================================
-   PLANNING MOBILE DAYS FIX
+   PLANNING — FIX PRO LAYOUT
+   Répare les cartes horaires écrasées
    ========================================================= */
 
-@media (max-width: 680px) {
-    .tsb-day-tabs {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 8px !important;
-        overflow: visible !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    .tsb-day-tabs button {
-        width: 100% !important;
-        min-width: 0 !important;
-        flex: none !important;
-        min-height: 42px !important;
-        padding: 0 10px !important;
-        border-radius: 999px !important;
-        text-align: center !important;
-        justify-content: center !important;
-        white-space: nowrap !important;
-        font-size: .72rem !important;
-    }
-
-    .tsb-day-tabs button:last-child {
-        grid-column: 1 / -1;
-    }
+.tsb-course-list::before {
+    display: none !important;
 }
 
-@media (max-width: 360px) {
-    .tsb-day-tabs {
+.tsb-course-card {
+    min-height: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 22px !important;
+    padding: 24px 26px !important;
+    border-radius: 24px !important;
+}
+
+.tsb-course-card::before {
+    display: none !important;
+}
+
+.tsb-course-card::after {
+    opacity: .14 !important;
+    background: linear-gradient(
+        90deg,
+        transparent 58%,
+        var(--course-color, rgba(215, 25, 32, .45))
+    ) !important;
+}
+
+.tsb-course-card div {
+    width: 100% !important;
+    max-width: 760px !important;
+}
+
+.tsb-course-card span {
+    display: inline-flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+    margin-bottom: 12px !important;
+    padding: 0 !important;
+    color: rgba(255, 255, 255, .55) !important;
+    font-size: .78rem !important;
+    font-weight: 950 !important;
+    letter-spacing: .14em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+}
+
+.tsb-course-card h4 {
+    max-width: 680px !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+    font-size: clamp(1.65rem, 2.4vw, 2.65rem) !important;
+    line-height: .95 !important;
+    letter-spacing: -0.065em !important;
+    text-wrap: balance;
+}
+
+.tsb-course-card p {
+    max-width: 620px !important;
+    margin-top: 10px !important;
+    color: rgba(255, 255, 255, .58) !important;
+    font-size: .95rem !important;
+    line-height: 1.55 !important;
+}
+
+.tsb-course-card > strong {
+    align-self: center !important;
+    justify-self: end !important;
+    min-width: max-content !important;
+    min-height: 38px !important;
+    padding: 0 14px !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, .055) !important;
+    border: 1px solid rgba(255, 255, 255, .13) !important;
+    color: rgba(255, 255, 255, .78) !important;
+    font-size: .72rem !important;
+    font-weight: 950 !important;
+    white-space: nowrap !important;
+}
+
+/* Enlève le côté énorme du titre jour */
+.tsb-day-head span {
+    font-size: clamp(2.8rem, 5vw, 5.4rem) !important;
+    line-height: .86 !important;
+}
+
+/* Responsive propre */
+@media (max-width: 760px) {
+    .tsb-course-card {
         grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        padding: 18px !important;
+        border-radius: 22px !important;
     }
 
-    .tsb-day-tabs button:last-child {
-        grid-column: auto;
+    .tsb-course-card::after {
+        background: linear-gradient(
+            180deg,
+            transparent 45%,
+            var(--course-color, rgba(215, 25, 32, .45))
+        ) !important;
+        opacity: .12 !important;
+    }
+
+    .tsb-course-card h4 {
+        font-size: clamp(1.35rem, 7vw, 2rem) !important;
+        line-height: .95 !important;
+    }
+
+    .tsb-course-card p {
+        font-size: .86rem !important;
+    }
+
+    .tsb-course-card > strong {
+        justify-self: start !important;
+        width: fit-content !important;
     }
 }
