@@ -586,7 +586,7 @@
         <div class="tsb-pricing-interface reveal delay-2">
             <div class="tsb-pricing-head">
                 <p class="eyebrow">Tarifs</p>
-                <h3>Un affichage simple des formules.</h3>
+                <h3>Choisis ta formule, rejoins la Team.</h3>
             </div>
 
             <div class="tsb-pricing-grid">
