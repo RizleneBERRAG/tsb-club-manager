@@ -440,17 +440,53 @@
                 <div class="tsb-day-panel" data-schedule-panel="mercredi">
                     <div class="tsb-day-head">
                         <span>Mercredi</span>
-                        <strong>1 créneau</strong>
+                        <strong>5 créneaux</strong>
                     </div>
 
                     <div class="tsb-course-list">
+                        <article class="tsb-course-card kids">
+                            <div>
+                                <span>15h – 16h</span>
+                                <h4>Boxing Kids</h4>
+                                <p>Cours enfants pour les 8–11 ans.</p>
+                            </div>
+                            <strong>8–11 ans</strong>
+                        </article>
+
+                        <article class="tsb-course-card kids">
+                            <div>
+                                <span>16h – 17h</span>
+                                <h4>Boxing Ados</h4>
+                                <p>Cours ados pour les 12–14 ans.</p>
+                            </div>
+                            <strong>12–14 ans</strong>
+                        </article>
+
+                        <article class="tsb-course-card morning">
+                            <div>
+                                <span>17h – 18h</span>
+                                <h4>Boxe tous niveaux</h4>
+                                <p>Créneau ouvert aux pratiquants tous niveaux.</p>
+                            </div>
+                            <strong>Tous niveaux</strong>
+                        </article>
+
+                        <article class="tsb-course-card intermediate">
+                            <div>
+                                <span>18h – 19h</span>
+                                <h4>Cross training</h4>
+                                <p>Travail physique, cardio, renforcement et condition.</p>
+                            </div>
+                            <strong>Training</strong>
+                        </article>
+
                         <article class="tsb-course-card competition">
                             <div>
                                 <span>19h – 21h</span>
-                                <h4>Compétiteur / Intermédiaire</h4>
-                                <p>Travail technique, intensité, rythme et préparation.</p>
+                                <h4>Boxing confirmés + accès libre</h4>
+                                <p>Créneau réservé aux profils confirmés avec accès libre.</p>
                             </div>
-                            <strong>Compétiteur</strong>
+                            <strong>Confirmés</strong>
                         </article>
                     </div>
                 </div>
