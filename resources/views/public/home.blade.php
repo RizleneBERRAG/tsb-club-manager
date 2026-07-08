@@ -440,7 +440,7 @@
                 <div class="tsb-day-panel" data-schedule-panel="mercredi">
                     <div class="tsb-day-head">
                         <span>Mercredi</span>
-                        <strong>5 créneaux</strong>
+                        <strong>4 créneaux</strong>
                     </div>
 
                     <div class="tsb-course-list">
@@ -464,20 +464,11 @@
 
                         <article class="tsb-course-card morning">
                             <div>
-                                <span>17h – 18h</span>
-                                <h4>Boxe tous niveaux</h4>
-                                <p>Créneau ouvert aux pratiquants tous niveaux.</p>
+                                <span>17h – 19h</span>
+                                <h4>Boxe tous niveaux / Cross training</h4>
+                                <p>Créneau ouvert aux pratiquants tous niveaux avec travail de boxe et cross training.</p>
                             </div>
                             <strong>Tous niveaux</strong>
-                        </article>
-
-                        <article class="tsb-course-card intermediate">
-                            <div>
-                                <span>18h – 19h</span>
-                                <h4>Cross training</h4>
-                                <p>Travail physique, cardio, renforcement et condition.</p>
-                            </div>
-                            <strong>Training</strong>
                         </article>
 
                         <article class="tsb-course-card competition">
