@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Team Samir Boxing — Club de boxe à Grenoble. Boxe, discipline, exigence et accompagnement.">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+
     @stack('styles')
 </head>
 
@@ -107,13 +107,13 @@
                         </svg>
                     </a>
 
-                    <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=100063806970133" target="_blank" rel="noopener" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M13.41 22v-8.18h2.75l.41-3.2h-3.16V8.58c0-.92.26-1.54 1.58-1.54H16.7V4.18a22.5 22.5 0 0 0-2.46-.13c-2.43 0-4.1 1.48-4.1 4.2v2.37H7.4v3.2h2.74V22h3.27Z"/>
                         </svg>
                     </a>
 
-                    <a href="https://wa.me/33782330058" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <a href="https://wa.me/33610717160" target="_blank" rel="noopener" aria-label="WhatsApp">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M20.52 3.48A11.85 11.85 0 0 0 12.08 0C5.5 0 .16 5.34.16 11.92c0 2.1.55 4.16 1.6 5.98L0 24l6.29-1.65a11.9 11.9 0 0 0 5.79 1.48h.01c6.58 0 11.92-5.35 11.92-11.92a11.82 11.82 0 0 0-3.49-8.43ZM12.09 21.8a9.84 9.84 0 0 1-5.03-1.38l-.36-.21-3.73.98 1-3.63-.24-.37a9.82 9.82 0 1 1 8.36 4.61Zm5.39-7.35c-.3-.15-1.75-.86-2.02-.95-.27-.1-.46-.15-.66.15-.2.3-.76.95-.94 1.15-.17.2-.35.23-.65.08-.3-.15-1.28-.47-2.44-1.5a9.06 9.06 0 0 1-1.69-2.1c-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.66-1.6-.9-2.2-.24-.56-.48-.48-.66-.49h-.56c-.2 0-.53.08-.8.38-.27.3-1.05 1.02-1.05 2.48s1.08 2.87 1.23 3.07c.15.2 2.13 3.25 5.16 4.56.72.31 1.28.49 1.72.62.72.23 1.38.2 1.9.12.58-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.08-.13-.28-.2-.58-.35Z"/>
                         </svg>
@@ -139,7 +139,9 @@
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{{ asset('assets/js/tsb.js') }}"></script>
+
 <script>
     document.addEventListener('click', function (event) {
         const button = event.target.closest('#menuToggle');
@@ -182,7 +184,5 @@
         }
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="{{ asset('assets/js/tsb.js') }}"></script>
 </body>
 </html>
