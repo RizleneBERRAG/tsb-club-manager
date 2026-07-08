@@ -143,46 +143,64 @@
 <script src="{{ asset('assets/js/tsb.js') }}"></script>
 
 <script>
-    document.addEventListener('click', function (event) {
-        const button = event.target.closest('#menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
+    (function () {
+        const body = document.body;
 
-        if (!button || !mobileMenu) {
-            return;
+        function setMenuState(isOpen) {
+            const button = document.getElementById('menuToggle');
+
+            body.classList.toggle('menu-open', isOpen);
+
+            if (button) {
+                button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
         }
 
-        const isOpen = document.body.classList.toggle('menu-open');
-        button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    document.addEventListener('click', function (event) {
-        const link = event.target.closest('#mobileMenu a');
-        const button = document.getElementById('menuToggle');
-
-        if (!link) {
-            return;
+        function closeMenu() {
+            setMenuState(false);
         }
 
-        document.body.classList.remove('menu-open');
+        document.addEventListener('click', function (event) {
+            if (!(event.target instanceof Element)) {
+                return;
+            }
 
-        if (button) {
-            button.setAttribute('aria-expanded', 'false');
-        }
-    });
+            const button = event.target.closest('#menuToggle');
 
-    document.addEventListener('keydown', function (event) {
-        if (event.key !== 'Escape') {
-            return;
-        }
+            if (!button) {
+                return;
+            }
 
-        const button = document.getElementById('menuToggle');
+            event.preventDefault();
+            event.stopImmediatePropagation();
 
-        document.body.classList.remove('menu-open');
+            setMenuState(!body.classList.contains('menu-open'));
+        }, true);
 
-        if (button) {
-            button.setAttribute('aria-expanded', 'false');
-        }
-    });
+        document.addEventListener('click', function (event) {
+            if (!(event.target instanceof Element)) {
+                return;
+            }
+
+            const link = event.target.closest('#mobileMenu a');
+
+            if (link) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 980) {
+                closeMenu();
+            }
+        });
+    })();
 </script>
 </body>
 </html>
