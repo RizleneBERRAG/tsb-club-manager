@@ -1,6 +1,7 @@
 /* =========================================================
    MAIN CSS — TEAM SAMIR BOXING
    public/assets/css/main.css
+   Version nettoyée : planning, tarifs, menu mobile, galerie
    ========================================================= */
 
 @import url('./base.css');
@@ -111,10 +112,7 @@ body.menu-open {
 
 .tsbCoverflow .swiper-slide {
     width: min(440px, 78vw);
-    transition:
-        transform .45s ease,
-        opacity .45s ease,
-        filter .45s ease;
+    transition: transform .45s ease, opacity .45s ease, filter .45s ease;
 }
 
 .tsbCoverflow .swiper-slide:not(.swiper-slide-active) {
@@ -158,8 +156,7 @@ body.menu-open {
     position: absolute;
     inset: auto 0 0 0;
     padding: 28px 26px 24px;
-    background:
-        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .24) 16%, rgba(0, 0, 0, .92) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .24) 16%, rgba(0, 0, 0, .92) 100%);
 }
 
 .media-tag {
@@ -213,10 +210,7 @@ body.menu-open {
     color: #ffffff;
     font-size: 1.8rem;
     cursor: pointer;
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        border-color .25s ease;
+    transition: transform .25s ease, background .25s ease, border-color .25s ease;
 }
 
 .coverflow-arrow:hover {
@@ -260,15 +254,17 @@ body.menu-open {
         overflow: hidden;
     }
 
-    .sport-hero-inner {
-        display: block;
+    .sport-hero-inner,
+    .sport-hero-content {
         width: 100%;
         max-width: 100%;
     }
 
+    .sport-hero-inner {
+        display: block;
+    }
+
     .sport-hero-content {
-        width: 100%;
-        max-width: 100%;
         overflow: hidden;
     }
 
@@ -327,12 +323,12 @@ body.menu-open {
 
     .sport-hero-actions .btn,
     .sport-hero .btn {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         min-height: 54px;
-        padding-left: 14px !important;
-        padding-right: 14px !important;
+        padding-left: 14px;
+        padding-right: 14px;
         justify-content: center;
         text-align: center;
         white-space: normal;
@@ -410,9 +406,7 @@ body.menu-open {
     opacity: 0;
     transform: scale(1.035);
     pointer-events: none;
-    transition:
-        opacity .55s ease,
-        transform .75s cubic-bezier(.16, 1, .3, 1);
+    transition: opacity .55s ease, transform .75s cubic-bezier(.16, 1, .3, 1);
 }
 
 .training-media-panel.active {
@@ -495,10 +489,7 @@ body.menu-open {
     color: #ffffff;
     text-align: left;
     cursor: pointer;
-    transition:
-        transform .25s ease,
-        border-color .25s ease,
-        background .25s ease;
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
 }
 
 .training-option::before {
@@ -569,7 +560,7 @@ body.menu-open {
 }
 
 /* =========================================================
-   INTERACTIVE PLANNING — PREMIUM AGENDA
+   INTERACTIVE PLANNING — CLEAN VERSION
    ========================================================= */
 
 .tsb-schedule-interface {
@@ -582,23 +573,27 @@ body.menu-open {
 
 .tsb-schedule-app {
     display: grid;
-    grid-template-columns: 330px 1fr;
+    grid-template-columns: 330px minmax(0, 1fr);
     gap: 22px;
     align-items: start;
 }
 
-/* LEFT PANEL */
+.tsb-schedule-left,
+.tsb-schedule-right,
+.tsb-pricing-interface {
+    border: 1px solid rgba(255, 255, 255, .10);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .08), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .018)),
+        rgba(6, 6, 6, .84);
+    box-shadow: 0 26px 80px rgba(0, 0, 0, .42);
+}
 
 .tsb-schedule-left {
     position: sticky;
     top: 104px;
     padding: 26px;
     border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, .10);
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)),
-        rgba(6, 6, 6, .82);
-    box-shadow: 0 26px 80px rgba(0, 0, 0, .42);
 }
 
 .tsb-schedule-intro span {
@@ -637,8 +632,6 @@ body.menu-open {
     font-size: .95rem;
 }
 
-/* DAY TABS */
-
 .tsb-day-tabs {
     display: grid;
     gap: 9px;
@@ -653,19 +646,15 @@ body.menu-open {
     border: 1px solid rgba(255, 255, 255, .09);
     border-radius: 16px;
     background:
-        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),
-        rgba(255,255,255,.02);
+        linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .018)),
+        rgba(255, 255, 255, .02);
     color: rgba(255, 255, 255, .56);
     font-size: .9rem;
     font-weight: 900;
     text-align: left;
     cursor: pointer;
     overflow: hidden;
-    transition:
-        color .22s ease,
-        border-color .22s ease,
-        background .22s ease,
-        transform .22s ease;
+    transition: color .22s ease, border-color .22s ease, background .22s ease, transform .22s ease;
 }
 
 .tsb-day-tabs button::before {
@@ -690,15 +679,13 @@ body.menu-open {
     color: #ffffff;
     border-color: rgba(215, 25, 32, .38);
     background:
-        linear-gradient(90deg, rgba(215, 25, 32, .20), rgba(255,255,255,.035)),
-        rgba(255,255,255,.02);
+        linear-gradient(90deg, rgba(215, 25, 32, .20), rgba(255, 255, 255, .035)),
+        rgba(255, 255, 255, .02);
 }
 
 .tsb-day-tabs button.active::before {
     background: var(--red);
 }
-
-/* ADDRESS NOTE */
 
 .tsb-schedule-note {
     margin-top: 26px;
@@ -724,20 +711,12 @@ body.menu-open {
     line-height: 1.55;
 }
 
-/* RIGHT PANEL */
-
 .tsb-schedule-right {
     position: relative;
     min-height: 560px;
     padding: 30px;
     overflow: hidden;
     border-radius: 34px;
-    border: 1px solid rgba(255, 255, 255, .10);
-    background:
-        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .08), transparent 28%),
-        linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .018)),
-        rgba(6, 6, 6, .84);
-    box-shadow: 0 26px 80px rgba(0, 0, 0, .42);
 }
 
 .tsb-day-panel {
@@ -761,8 +740,6 @@ body.menu-open {
     }
 }
 
-/* DAY HEADER */
-
 .tsb-day-head {
     display: flex;
     align-items: flex-start;
@@ -775,8 +752,8 @@ body.menu-open {
 
 .tsb-day-head span {
     color: #ffffff;
-    font-size: clamp(2.8rem, 5vw, 5.1rem);
-    line-height: .82;
+    font-size: clamp(2.8rem, 5vw, 5.4rem);
+    line-height: .86;
     font-weight: 1000;
     letter-spacing: -0.09em;
     text-transform: uppercase;
@@ -796,48 +773,26 @@ body.menu-open {
     white-space: nowrap;
 }
 
-/* COURSE LIST — PRO TIMELINE */
-
 .tsb-course-list {
-    position: relative;
     display: grid;
     gap: 12px;
 }
 
-.tsb-course-list::before {
-    content: "";
-    position: absolute;
-    left: 104px;
-    top: 12px;
-    bottom: 12px;
-    width: 1px;
-    background: linear-gradient(
-        180deg,
-        transparent,
-        rgba(255, 255, 255, .12),
-        transparent
-    );
-}
-
 .tsb-course-card {
     position: relative;
-    min-height: 118px;
+    min-height: auto;
     display: grid;
-    grid-template-columns: 110px 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 22px;
-    padding: 18px 20px;
+    padding: 24px 26px;
     overflow: hidden;
-    border-radius: 22px;
+    border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, .085);
     background:
         linear-gradient(180deg, rgba(255, 255, 255, .042), rgba(255, 255, 255, .018)),
         rgba(255, 255, 255, .018);
-    transition:
-        transform .22s ease,
-        border-color .22s ease,
-        background .22s ease,
-        box-shadow .22s ease;
+    transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
 }
 
 .tsb-course-card:hover {
@@ -849,137 +804,212 @@ body.menu-open {
     box-shadow: 0 20px 45px rgba(0, 0, 0, .24);
 }
 
-.tsb-course-card::before {
-    content: "";
-    position: absolute;
-    left: 105px;
-    top: 50%;
-    z-index: 2;
-    width: 9px;
-    height: 9px;
-    border-radius: 999px;
-    transform: translate(-50%, -50%);
-    background: var(--red);
-    box-shadow: 0 0 0 7px rgba(215, 25, 32, .10);
-}
-
 .tsb-course-card::after {
     content: "";
     position: absolute;
     inset: 0;
-    opacity: .16;
+    opacity: .14;
     pointer-events: none;
-    background: linear-gradient(90deg, transparent 70%, var(--course-color, rgba(215,25,32,.45)));
+    background: linear-gradient(90deg, transparent 58%, var(--course-color, rgba(215, 25, 32, .45)));
 }
 
-.tsb-course-card.morning {
-    --course-color: rgba(31, 170, 107, .62);
+.tsb-course-card.morning { --course-color: rgba(31, 170, 107, .62); }
+.tsb-course-card.free { --course-color: rgba(47, 128, 237, .62); }
+.tsb-course-card.beginner { --course-color: rgba(86, 190, 65, .60); }
+.tsb-course-card.intermediate { --course-color: rgba(122, 77, 255, .60); }
+.tsb-course-card.competition { --course-color: rgba(215, 25, 32, .65); }
+.tsb-course-card.girls { --course-color: rgba(226, 79, 154, .62); }
+.tsb-course-card.kids { --course-color: rgba(245, 190, 72, .62); }
+
+.tsb-course-card div,
+.tsb-course-card > strong,
+.tsb-course-card span,
+.tsb-course-card h4,
+.tsb-course-card p {
+    position: relative;
+    z-index: 2;
 }
 
-.tsb-course-card.free {
-    --course-color: rgba(242, 201, 76, .58);
-}
-
-.tsb-course-card.beginner {
-    --course-color: rgba(31, 170, 107, .58);
-}
-
-.tsb-course-card.intermediate {
-    --course-color: rgba(122, 77, 255, .60);
-}
-
-.tsb-course-card.competition {
-    --course-color: rgba(215, 25, 32, .65);
-}
-
-.tsb-course-card.girls {
-    --course-color: rgba(226, 79, 154, .62);
-}
-
-.tsb-course-card.kids {
-    --course-color: rgba(47, 128, 237, .62);
+.tsb-course-card div {
+    width: 100%;
+    max-width: 760px;
 }
 
 .tsb-course-card span {
-    position: relative;
-    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 0;
     color: rgba(255, 255, 255, .55);
-    font-size: .8rem;
+    font-size: .78rem;
     font-weight: 950;
-    letter-spacing: .12em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     white-space: nowrap;
 }
 
-.tsb-course-card div {
-    position: relative;
-    z-index: 3;
-}
-
 .tsb-course-card h4 {
+    max-width: 680px;
     margin: 0;
     color: #ffffff;
-    font-size: clamp(1.35rem, 2vw, 2rem);
-    line-height: 1;
-    letter-spacing: -0.055em;
+    font-size: clamp(1.65rem, 2.4vw, 2.65rem);
+    line-height: .95;
+    letter-spacing: -0.065em;
+    text-wrap: balance;
 }
 
 .tsb-course-card p {
     max-width: 620px;
-    margin-top: 9px;
-    color: rgba(255, 255, 255, .55);
+    margin-top: 10px;
+    color: rgba(255, 255, 255, .58);
+    font-size: .95rem;
     line-height: 1.55;
-    font-size: .93rem;
 }
 
 .tsb-course-card > strong {
-    position: relative;
-    z-index: 3;
-    min-height: 36px;
+    align-self: center;
+    justify-self: end;
+    min-width: max-content;
+    min-height: 38px;
     display: inline-flex;
     align-items: center;
-    padding: 0 13px;
+    padding: 0 14px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, .12);
-    background: rgba(255, 255, 255, .05);
-    color: rgba(255, 255, 255, .76);
-    font-size: .7rem;
+    background: rgba(255, 255, 255, .055);
+    border: 1px solid rgba(255, 255, 255, .13);
+    color: rgba(255, 255, 255, .78);
+    font-size: .72rem;
     font-weight: 950;
     white-space: nowrap;
 }
 
 /* =========================================================
-   PRICING — PREMIUM
+   PRICING — PREMIUM + BENEFITS
    ========================================================= */
 
 .tsb-pricing-interface {
     margin-top: 24px;
     padding: 30px;
     border-radius: 34px;
-    border: 1px solid rgba(255, 255, 255, .10);
-    background:
-        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .08), transparent 28%),
-        linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .018)),
-        rgba(6, 6, 6, .84);
-    box-shadow: 0 26px 80px rgba(0, 0, 0, .42);
 }
 
 .tsb-pricing-head {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 24px;
-    padding-bottom: 24px;
-    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 26px;
+    margin-bottom: 28px;
     border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
-.tsb-pricing-head h3 {
-    color: #ffffff;
-    font-size: clamp(2.1rem, 4vw, 4rem);
-    line-height: .9;
-    letter-spacing: -0.08em;
+.tsb-pricing-head .eyebrow {
+    position: relative;
+    margin: 0;
+    padding-left: 22px;
+    color: #ff343b;
+    font-size: .72rem;
+    font-weight: 950;
+    letter-spacing: .22em;
     text-transform: uppercase;
+}
+
+.tsb-pricing-head .eyebrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--red);
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 7px rgba(215, 25, 32, .12);
+}
+
+.tsb-pricing-head h3 {
+    max-width: 760px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2.4rem, 4.4vw, 4.8rem);
+    line-height: .92;
+    font-weight: 1000;
+    letter-spacing: -0.075em;
+}
+
+.tsb-pricing-head h3::after {
+    content: "";
+    display: block;
+    width: 74px;
+    height: 4px;
+    margin-top: 18px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--red), rgba(215, 25, 32, 0));
+}
+
+.tsb-pricing-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.tsb-pricing-benefits article {
+    position: relative;
+    min-height: 160px;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, .09);
+    background:
+        radial-gradient(circle at 100% 0%, rgba(215, 25, 32, .12), transparent 38%),
+        rgba(255, 255, 255, .025);
+}
+
+.tsb-pricing-benefits article::after {
+    content: "";
+    position: absolute;
+    inset: auto -40px -60px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 999px;
+    background: rgba(215, 25, 32, .18);
+    filter: blur(22px);
+}
+
+.tsb-pricing-benefits span {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: rgba(215, 25, 32, .18);
+    border: 1px solid rgba(215, 25, 32, .30);
+    color: #ffffff;
+    font-size: .78rem;
+    font-weight: 950;
+}
+
+.tsb-pricing-benefits strong,
+.tsb-pricing-benefits p {
+    position: relative;
+    z-index: 2;
+}
+
+.tsb-pricing-benefits strong {
+    display: block;
+    margin-top: 18px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    letter-spacing: -0.04em;
+}
+
+.tsb-pricing-benefits p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, .55);
+    font-size: .9rem;
+    line-height: 1.55;
 }
 
 .tsb-pricing-grid {
@@ -998,10 +1028,7 @@ body.menu-open {
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, .09);
     background: rgba(255, 255, 255, .025);
-    transition:
-        transform .22s ease,
-        border-color .22s ease,
-        background .22s ease;
+    transition: transform .22s ease, border-color .22s ease, background .22s ease;
 }
 
 .tsb-price-card:hover {
@@ -1010,14 +1037,20 @@ body.menu-open {
     background: rgba(255, 255, 255, .04);
 }
 
-.tsb-price-card span {
+.tsb-price-card span,
+.tsb-price-card small {
     width: fit-content;
-    padding: 8px 11px;
+    display: inline-flex;
+    align-items: center;
     border-radius: 999px;
+    font-weight: 950;
+}
+
+.tsb-price-card span {
+    padding: 8px 11px;
     background: rgba(255, 255, 255, .055);
     color: rgba(255, 255, 255, .58);
     font-size: .62rem;
-    font-weight: 950;
     letter-spacing: .12em;
     text-transform: uppercase;
 }
@@ -1045,6 +1078,15 @@ body.menu-open {
     font-size: .92rem;
 }
 
+.tsb-price-card small {
+    margin-top: 14px;
+    padding: 8px 11px;
+    background: rgba(215, 25, 32, .16);
+    border: 1px solid rgba(215, 25, 32, .28);
+    color: #ffffff;
+    font-size: .72rem;
+}
+
 .tsb-price-card.best {
     border-color: rgba(245, 190, 72, .36);
     background:
@@ -1052,8 +1094,10 @@ body.menu-open {
         rgba(255, 255, 255, .03);
 }
 
-.tsb-price-card.best span {
-    background: rgba(245, 190, 72, .13);
+.tsb-price-card.best span,
+.tsb-price-card.best small {
+    background: rgba(245, 190, 72, .14);
+    border-color: rgba(245, 190, 72, .34);
     color: #ffe39a;
 }
 
@@ -1084,6 +1128,14 @@ body.menu-open {
     color: #ffffff;
     font-size: 1.35rem;
     letter-spacing: -0.045em;
+}
+
+.tsb-kids-pricing > div:first-child p {
+    max-width: 480px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, .52);
+    font-size: .9rem;
+    line-height: 1.5;
 }
 
 .tsb-kids-price-list {
@@ -1118,185 +1170,38 @@ body.menu-open {
     letter-spacing: -0.06em;
 }
 
-/* =========================================================
-   PLANNING RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1180px) {
-    .tsb-schedule-app {
-        grid-template-columns: 1fr;
-    }
-
-    .tsb-schedule-left {
-        position: relative;
-        top: auto;
-    }
-
-    .tsb-day-tabs {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .tsb-day-tabs button {
-        text-align: center;
-    }
-
-    .tsb-day-tabs button:hover,
-    .tsb-day-tabs button.active {
-        transform: none;
-    }
-
-    .tsb-schedule-right {
-        min-height: auto;
-    }
-
-    .tsb-pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.tsb-kids-price-list article p {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, .52);
+    font-size: .82rem;
 }
 
-@media (max-width: 680px) {
-    .tsb-schedule-left,
-    .tsb-schedule-right,
-    .tsb-pricing-interface {
-        padding: 20px;
-        border-radius: 26px;
-    }
-
-    .tsb-schedule-intro h3 {
-        font-size: clamp(2.1rem, 12vw, 3.3rem);
-    }
-
-    .tsb-schedule-intro p {
-        font-size: .9rem;
-    }
-
-    .tsb-day-tabs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-        margin-top: 22px;
-    }
-
-    .tsb-day-tabs button {
-        min-height: 42px;
-        padding: 0 10px;
-        border-radius: 999px;
-        font-size: .72rem;
-        text-align: center;
-    }
-
-    .tsb-schedule-note {
-        margin-top: 20px;
-        padding: 15px;
-        border-radius: 20px;
-    }
-
-    .tsb-day-head {
-        display: grid;
-        gap: 10px;
-        padding-bottom: 18px;
-        margin-bottom: 18px;
-    }
-
-    .tsb-day-head span {
-        font-size: clamp(2.7rem, 15vw, 4rem);
-    }
-
-    .tsb-day-head strong {
-        width: fit-content;
-        min-height: 36px;
-        font-size: .68rem;
-    }
-
-    .tsb-course-list::before,
-    .tsb-course-card::before {
-        display: none;
-    }
-
-    .tsb-course-card {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        gap: 14px;
-        padding: 17px;
-        border-radius: 20px;
-    }
-
-    .tsb-course-card::after {
-        opacity: .12;
-        background: linear-gradient(180deg, transparent 42%, var(--course-color, rgba(215,25,32,.45)));
-    }
-
-    .tsb-course-card span {
-        font-size: .68rem;
-    }
-
-    .tsb-course-card h4 {
-        font-size: clamp(1.35rem, 7vw, 1.85rem);
-    }
-
-    .tsb-course-card p {
-        font-size: .86rem;
-    }
-
-    .tsb-course-card > strong {
-        width: fit-content;
-        min-height: 34px;
-        font-size: .66rem;
-    }
-
-    .tsb-pricing-head {
-        display: grid;
-        gap: 8px;
-        padding-bottom: 18px;
-        margin-bottom: 18px;
-    }
-
-    .tsb-pricing-head h3 {
-        font-size: clamp(2.1rem, 11vw, 3.2rem);
-    }
-
-    .tsb-pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .tsb-price-card {
-        min-height: auto;
-        padding: 18px;
-        border-radius: 20px;
-    }
-
-    .tsb-price-card h4 {
-        margin-top: 18px;
-    }
-
-    .tsb-price-card strong {
-        font-size: clamp(2.6rem, 14vw, 3.8rem);
-    }
-
-    .tsb-kids-pricing {
-        grid-template-columns: 1fr;
-        padding: 18px;
-        border-radius: 20px;
-    }
-
-    .tsb-kids-price-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .tsb-kids-price-list article {
-        min-width: 0;
-    }
+.tsb-coaching-note {
+    margin-top: 16px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border-radius: 22px;
+    border: 1px solid rgba(215, 25, 32, .22);
+    background:
+        linear-gradient(90deg, rgba(215, 25, 32, .13), rgba(255, 255, 255, .025)),
+        rgba(255, 255, 255, .02);
 }
 
-@media (max-width: 390px) {
-    .tsb-day-tabs {
-        grid-template-columns: 1fr;
-    }
+.tsb-coaching-note strong {
+    color: #ffffff;
+    font-size: .95rem;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
 
-    .tsb-kids-price-list {
-        grid-template-columns: 1fr;
-    }
+.tsb-coaching-note span {
+    color: rgba(255, 255, 255, .58);
+    font-size: .9rem;
+    line-height: 1.45;
 }
 
 /* =========================================================
@@ -1326,11 +1231,7 @@ body.menu-open {
     letter-spacing: .08em;
     text-transform: uppercase;
     cursor: pointer;
-    transition:
-        background .25s ease,
-        border-color .25s ease,
-        color .25s ease,
-        transform .25s ease;
+    transition: background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
 }
 
 .gallery-filter:hover,
@@ -1391,9 +1292,7 @@ body.menu-open {
     display: block;
     object-fit: cover;
     filter: saturate(.96) contrast(1.04) brightness(.78);
-    transition:
-        transform .7s cubic-bezier(.16, 1, .3, 1),
-        filter .35s ease;
+    transition: transform .7s cubic-bezier(.16, 1, .3, 1), filter .35s ease;
 }
 
 .gallery-feature-card:hover img,
@@ -1474,9 +1373,7 @@ body.menu-open {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition:
-        opacity .25s ease,
-        visibility .25s ease;
+    transition: opacity .25s ease, visibility .25s ease;
 }
 
 .gallery-lightbox.is-open {
@@ -1580,12 +1477,12 @@ body.menu-open {
    ========================================================= */
 
 .site-footer.tsb-min-footer {
-    display: block !important;
-    width: min(1280px, calc(100% - 44px)) !important;
-    margin: 58px auto 24px !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: 0 !important;
+    display: block;
+    width: min(1280px, calc(100% - 44px));
+    margin: 58px auto 24px;
+    padding: 0;
+    background: transparent;
+    border: 0;
 }
 
 .tsb-min-footer-panel {
@@ -1690,11 +1587,7 @@ body.menu-open {
     color: rgba(255, 255, 255, .68);
     background: rgba(255, 255, 255, .045);
     border: 1px solid rgba(255, 255, 255, .08);
-    transition:
-        transform .2s ease,
-        color .2s ease,
-        background .2s ease,
-        border-color .2s ease;
+    transition: transform .2s ease, color .2s ease, background .2s ease, border-color .2s ease;
 }
 
 .tsb-min-socials a:hover {
@@ -1721,7 +1614,7 @@ body.menu-open {
 }
 
 .tsb-min-nav {
-    display: flex !important;
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 14px;
@@ -1788,7 +1681,7 @@ body.menu-open {
 
 .document-home-card h3,
 .access-step h3 {
-    margin-top: 0 !important;
+    margin-top: 0;
     display: flex;
     align-items: flex-start;
 }
@@ -1803,8 +1696,113 @@ body.menu-open {
 
 .document-home-card p,
 .access-step p {
-    margin-top: 0 !important;
+    margin-top: 0;
     align-self: start;
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+@media (min-width: 981px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 980px) {
+    .site-header {
+        z-index: 4100;
+    }
+
+    .desktop-nav,
+    .header-cta {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        position: relative;
+        z-index: 4200;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 4000;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 96px 18px 24px;
+        background:
+            radial-gradient(circle at 50% 0%, rgba(215, 25, 32, .20), transparent 36%),
+            rgba(0, 0, 0, .92);
+        backdrop-filter: blur(18px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+    }
+
+    body.menu-open .mobile-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .mobile-menu-inner {
+        width: min(420px, 100%);
+        display: grid;
+        gap: 10px;
+        padding: 18px;
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, .12);
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .025)),
+            #080808;
+        box-shadow: 0 28px 90px rgba(0, 0, 0, .55);
+    }
+
+    .mobile-menu-inner a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        border-radius: 16px;
+        color: rgba(255, 255, 255, .76);
+        background: rgba(255, 255, 255, .045);
+        border: 1px solid rgba(255, 255, 255, .08);
+        font-size: .88rem;
+        font-weight: 850;
+        text-decoration: none;
+    }
+
+    .mobile-menu-inner a:hover,
+    .mobile-menu-inner a.active {
+        color: #ffffff;
+        background: rgba(215, 25, 32, .16);
+        border-color: rgba(215, 25, 32, .32);
+    }
+
+    .mobile-menu-inner .mobile-cta {
+        justify-content: center;
+        margin-top: 4px;
+        background: var(--red);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, .16);
+    }
+
+    body.menu-open .menu-toggle span:first-child {
+        transform: translateY(4px) rotate(45deg);
+    }
+
+    body.menu-open .menu-toggle span:last-child {
+        transform: translateY(-4px) rotate(-45deg);
+    }
 }
 
 /* =========================================================
@@ -1818,13 +1816,11 @@ body.menu-open {
     }
 
     .tsb-schedule-left {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 22px;
+        position: relative;
+        top: auto;
     }
 
     .tsb-day-tabs {
-        display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
     }
@@ -1865,16 +1861,13 @@ body.menu-open {
 }
 
 @media (max-width: 980px) {
-    .gallery-studio-grid {
+    .gallery-studio-grid,
+    .gallery-lightbox-panel {
         grid-template-columns: 1fr;
     }
 
     .gallery-feature-card {
         min-height: 520px;
-    }
-
-    .gallery-lightbox-panel {
-        grid-template-columns: 1fr;
     }
 
     .gallery-lightbox-media {
@@ -1906,12 +1899,12 @@ body.menu-open {
     .document-home-card h3,
     .access-step h3 {
         min-height: auto;
-        margin-top: 18px !important;
+        margin-top: 18px;
     }
 
     .document-home-card p,
     .access-step p {
-        margin-top: 12px !important;
+        margin-top: 12px;
     }
 
     .tsb-min-footer-top {
@@ -2012,12 +2005,12 @@ body.menu-open {
     .tsb-schedule-left,
     .tsb-schedule-right,
     .tsb-pricing-interface {
-        padding: 20px;
-        border-radius: 26px;
+        padding: 16px;
+        border-radius: 24px;
     }
 
     .tsb-schedule-intro h3 {
-        font-size: clamp(2.4rem, 13vw, 3.7rem);
+        font-size: clamp(2.35rem, 13vw, 3.6rem);
         line-height: .88;
     }
 
@@ -2027,57 +2020,44 @@ body.menu-open {
     }
 
     .tsb-day-tabs {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 8px !important;
-        overflow: visible !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 22px;
     }
 
     .tsb-day-tabs button {
-        width: 100% !important;
-        min-width: 0 !important;
-        flex: none !important;
-        min-height: 42px !important;
-        padding: 0 10px !important;
-        border-radius: 999px !important;
-        text-align: center !important;
-        justify-content: center !important;
-        white-space: nowrap !important;
-        font-size: .72rem !important;
+        min-height: 42px;
+        padding: 0 10px;
+        border-radius: 999px;
+        font-size: .72rem;
+        text-align: center;
+        white-space: nowrap;
     }
 
     .tsb-schedule-note {
+        margin-top: 20px;
         padding: 15px;
         border-radius: 20px;
-    }
-
-    .tsb-schedule-note strong {
-        font-size: .72rem;
-    }
-
-    .tsb-schedule-note span {
-        font-size: .84rem;
     }
 
     .tsb-day-head {
         display: grid;
         gap: 12px;
+        padding-bottom: 18px;
         margin-bottom: 18px;
     }
 
     .tsb-day-head span {
-        font-size: clamp(3rem, 17vw, 4.6rem);
+        font-size: clamp(2.65rem, 16vw, 3.9rem);
         line-height: .82;
         word-break: break-word;
     }
 
     .tsb-day-head strong {
         width: fit-content;
-        min-height: 38px;
+        min-height: 36px;
         padding: 0 13px;
-        font-size: .72rem;
+        font-size: .68rem;
     }
 
     .tsb-course-list {
@@ -2087,10 +2067,14 @@ body.menu-open {
     .tsb-course-card {
         grid-template-columns: 1fr;
         align-items: start;
-        min-height: auto;
         gap: 16px;
         padding: 18px;
         border-radius: 22px;
+    }
+
+    .tsb-course-card::after {
+        opacity: .12;
+        background: linear-gradient(180deg, transparent 45%, var(--course-color, rgba(215, 25, 32, .45)));
     }
 
     .tsb-course-card span {
@@ -2098,19 +2082,18 @@ body.menu-open {
     }
 
     .tsb-course-card h4 {
-        margin-top: 10px;
         font-size: clamp(1.35rem, 7vw, 2rem);
         line-height: .95;
     }
 
     .tsb-course-card p {
-        font-size: .88rem;
+        font-size: .86rem;
         line-height: 1.5;
     }
 
     .tsb-course-card > strong {
-        width: fit-content;
-        min-height: 38px;
+        justify-self: start;
+        min-height: 36px;
         font-size: .68rem;
     }
 
@@ -2119,71 +2102,203 @@ body.menu-open {
     }
 
     .tsb-pricing-head {
-        display: grid;
-        gap: 8px;
+        display: block;
+        padding-bottom: 18px;
         margin-bottom: 18px;
     }
 
+    .tsb-pricing-head .eyebrow {
+        font-size: .64rem;
+        letter-spacing: .18em;
+    }
+
     .tsb-pricing-head h3 {
-        font-size: clamp(2.2rem, 12vw, 3.7rem);
+        margin-top: 14px;
+        font-size: clamp(1.85rem, 9vw, 2.65rem);
+        line-height: .92;
+        letter-spacing: -0.06em;
+    }
+
+    .tsb-pricing-head h3::after {
+        width: 56px;
+        height: 3px;
+        margin-top: 12px;
+    }
+
+    .tsb-pricing-benefits {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .tsb-pricing-benefits article {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        align-items: center;
+        column-gap: 12px;
+        padding: 13px 14px;
+        border-radius: 18px;
+        background:
+            linear-gradient(90deg, rgba(215, 25, 32, .10), rgba(255, 255, 255, .025)),
+            rgba(255, 255, 255, .02);
+    }
+
+    .tsb-pricing-benefits article::after {
+        display: none;
+    }
+
+    .tsb-pricing-benefits span {
+        width: 30px;
+        height: 30px;
+        grid-row: span 2;
+        border-radius: 11px;
+        font-size: .68rem;
+    }
+
+    .tsb-pricing-benefits strong {
+        margin: 0;
+        font-size: .88rem;
+        line-height: 1.15;
+        letter-spacing: -0.025em;
+    }
+
+    .tsb-pricing-benefits p {
+        margin-top: 4px;
+        font-size: .74rem;
+        line-height: 1.35;
     }
 
     .tsb-pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 
     .tsb-price-card {
-        min-height: auto;
-        padding: 18px;
-        border-radius: 22px;
+        min-height: 176px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .tsb-price-card span {
+        padding: 6px 9px;
+        font-size: .55rem;
+        letter-spacing: .08em;
     }
 
     .tsb-price-card h4 {
-        margin-top: 18px;
-        font-size: 1.2rem;
+        margin-top: 16px;
+        font-size: .92rem;
     }
 
     .tsb-price-card strong {
-        font-size: clamp(2.7rem, 15vw, 4.2rem);
+        margin-top: 6px;
+        font-size: clamp(2.1rem, 11vw, 3rem);
     }
 
     .tsb-price-card p {
-        font-size: .88rem;
+        margin-top: 8px;
+        font-size: .74rem;
+        line-height: 1.35;
+    }
+
+    .tsb-price-card small {
+        margin-top: 10px;
+        padding: 6px 9px;
+        font-size: .62rem;
+        line-height: 1.15;
+        white-space: normal;
+    }
+
+    .tsb-price-card.best {
+        grid-column: 1 / -1;
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .tsb-price-card.best p,
+    .tsb-price-card.best small {
+        grid-column: 1 / -1;
     }
 
     .tsb-kids-pricing {
+        margin-top: 12px;
         grid-template-columns: 1fr;
-        padding: 18px;
-        border-radius: 22px;
-        gap: 16px;
+        padding: 14px;
+        border-radius: 18px;
+        gap: 12px;
+    }
+
+    .tsb-kids-pricing > div:first-child span {
+        font-size: .6rem;
+        letter-spacing: .12em;
     }
 
     .tsb-kids-pricing > div:first-child strong {
-        font-size: 1.25rem;
+        margin-top: 6px;
+        font-size: 1.05rem;
+    }
+
+    .tsb-kids-pricing > div:first-child p {
+        margin-top: 6px;
+        font-size: .74rem;
+        line-height: 1.35;
     }
 
     .tsb-kids-price-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 8px;
     }
 
     .tsb-kids-price-list article {
         min-width: 0;
-        padding: 15px;
-        border-radius: 20px;
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .tsb-kids-price-list small {
+        font-size: .62rem;
+        line-height: 1.25;
     }
 
     .tsb-kids-price-list strong {
-        font-size: 2rem;
+        margin-top: 6px;
+        font-size: 1.8rem;
+    }
+
+    .tsb-kids-price-list article p {
+        margin-top: 6px;
+        font-size: .68rem;
+        line-height: 1.25;
+    }
+
+    .tsb-coaching-note {
+        margin-top: 12px;
+        padding: 14px;
+        display: grid;
+        border-radius: 18px;
+        gap: 6px;
+    }
+
+    .tsb-coaching-note strong {
+        font-size: .72rem;
+        letter-spacing: .08em;
+    }
+
+    .tsb-coaching-note span {
+        font-size: .74rem;
+        line-height: 1.35;
     }
 }
 
 @media (max-width: 640px) {
     .site-footer.tsb-min-footer {
-        width: calc(100% - 24px) !important;
-        margin: 48px auto 18px !important;
+        width: calc(100% - 24px);
+        margin: 48px auto 18px;
     }
 
     .tsb-min-footer-panel {
@@ -2264,7 +2379,8 @@ body.menu-open {
         scrollbar-width: none;
     }
 
-    .training-options::-webkit-scrollbar {
+    .training-options::-webkit-scrollbar,
+    .gallery-filters::-webkit-scrollbar {
         display: none;
     }
 
@@ -2285,7 +2401,8 @@ body.menu-open {
         box-shadow: none;
     }
 
-    .training-option::before {
+    .training-option::before,
+    .training-option small {
         display: none;
     }
 
@@ -2296,21 +2413,16 @@ body.menu-open {
         border-color: rgba(255, 255, 255, .22);
     }
 
-    .training-option span {
+    .training-option span,
+    .training-option.active span {
         width: auto;
         height: auto;
         border: none;
         background: transparent;
         box-shadow: none;
-        color: rgba(255, 255, 255, .72);
+        color: #ffffff;
         font-size: .68rem;
         letter-spacing: .02em;
-    }
-
-    .training-option.active span {
-        background: transparent;
-        box-shadow: none;
-        color: #ffffff;
     }
 
     .training-option strong {
@@ -2320,24 +2432,15 @@ body.menu-open {
         white-space: nowrap;
     }
 
-    .training-option small {
-        display: none;
-    }
-
     .training-media-stage {
         order: 2;
         min-height: 520px;
         border-radius: 32px;
         overflow: hidden;
-        box-shadow:
-            0 28px 80px rgba(0, 0, 0, .48),
-            inset 0 0 0 1px rgba(255, 255, 255, .08);
+        box-shadow: 0 28px 80px rgba(0, 0, 0, .48), inset 0 0 0 1px rgba(255, 255, 255, .08);
     }
 
-    .training-media-panel {
-        transform: scale(1.02);
-    }
-
+    .training-media-panel,
     .training-media-panel.active {
         transform: scale(1);
     }
@@ -2353,7 +2456,8 @@ body.menu-open {
             linear-gradient(90deg, rgba(0, 0, 0, .56), transparent 58%);
     }
 
-    .training-media-content {
+    .training-media-content,
+    .gallery-feature-content {
         left: 18px;
         right: 18px;
         bottom: 18px;
@@ -2392,10 +2496,6 @@ body.menu-open {
         scrollbar-width: none;
     }
 
-    .gallery-filters::-webkit-scrollbar {
-        display: none;
-    }
-
     .gallery-filter {
         flex: 0 0 auto;
         min-height: 42px;
@@ -2406,6 +2506,10 @@ body.menu-open {
     .gallery-feature-card {
         min-height: 430px;
         border-radius: 30px;
+    }
+
+    .gallery-feature-content h3 {
+        font-size: clamp(2rem, 11vw, 3.2rem);
     }
 
     .gallery-media-wall {
@@ -2424,21 +2528,6 @@ body.menu-open {
 
     .gallery-media-card.wide {
         grid-column: span 2;
-    }
-
-    .gallery-feature-content {
-        left: 18px;
-        right: 18px;
-        bottom: 18px;
-        padding: 18px;
-        border-radius: 24px;
-        background: rgba(0, 0, 0, .48);
-        border: 1px solid rgba(255, 255, 255, .12);
-        backdrop-filter: blur(18px);
-    }
-
-    .gallery-feature-content h3 {
-        font-size: clamp(2rem, 11vw, 3.2rem);
     }
 
     .gallery-lightbox {
@@ -2463,18 +2552,18 @@ body.menu-open {
     .tsb-schedule-left,
     .tsb-schedule-right,
     .tsb-pricing-interface {
-        padding: 18px;
-        border-radius: 24px;
+        padding: 16px;
+        border-radius: 22px;
     }
 
     .tsb-day-tabs button {
-        min-height: 42px !important;
-        padding: 0 10px !important;
-        font-size: .68rem !important;
+        min-height: 42px;
+        padding: 0 10px;
+        font-size: .68rem;
     }
 
     .tsb-day-head span {
-        font-size: clamp(2.6rem, 16vw, 3.8rem);
+        font-size: clamp(2.5rem, 15vw, 3.5rem);
     }
 
     .tsb-course-card {
@@ -2490,20 +2579,18 @@ body.menu-open {
         font-size: .84rem;
     }
 
-    .tsb-pricing-head h3 {
-        font-size: clamp(2rem, 12vw, 3.1rem);
-    }
-
     .tsb-price-card strong {
         font-size: 3rem;
-    }
-
-    .tsb-kids-price-list {
-        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 390px) {
+    .tsb-pricing-grid,
+    .tsb-price-card.best,
+    .tsb-kids-price-list {
+        grid-template-columns: 1fr;
+    }
+
     .coverflow-card,
     .media-card-visual {
         min-height: 390px;
@@ -2553,7 +2640,7 @@ body.menu-open {
     }
 
     .tsb-day-tabs {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
     }
 
     .tsb-day-head span {
@@ -2566,322 +2653,5 @@ body.menu-open {
 
     .tsb-price-card strong {
         font-size: 2.65rem;
-    }
-}
-
-
-/* =========================================================
-   PLANNING — FIX PRO LAYOUT
-   Répare les cartes horaires écrasées
-   ========================================================= */
-
-.tsb-course-list::before {
-    display: none !important;
-}
-
-.tsb-course-card {
-    min-height: auto !important;
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) auto !important;
-    align-items: center !important;
-    gap: 22px !important;
-    padding: 24px 26px !important;
-    border-radius: 24px !important;
-}
-
-.tsb-course-card::before {
-    display: none !important;
-}
-
-.tsb-course-card::after {
-    opacity: .14 !important;
-    background: linear-gradient(
-        90deg,
-        transparent 58%,
-        var(--course-color, rgba(215, 25, 32, .45))
-    ) !important;
-}
-
-.tsb-course-card div {
-    width: 100% !important;
-    max-width: 760px !important;
-}
-
-.tsb-course-card span {
-    display: inline-flex !important;
-    align-items: center !important;
-    width: fit-content !important;
-    margin-bottom: 12px !important;
-    padding: 0 !important;
-    color: rgba(255, 255, 255, .55) !important;
-    font-size: .78rem !important;
-    font-weight: 950 !important;
-    letter-spacing: .14em !important;
-    text-transform: uppercase !important;
-    white-space: nowrap !important;
-}
-
-.tsb-course-card h4 {
-    max-width: 680px !important;
-    margin: 0 !important;
-    color: #ffffff !important;
-    font-size: clamp(1.65rem, 2.4vw, 2.65rem) !important;
-    line-height: .95 !important;
-    letter-spacing: -0.065em !important;
-    text-wrap: balance;
-}
-
-.tsb-course-card p {
-    max-width: 620px !important;
-    margin-top: 10px !important;
-    color: rgba(255, 255, 255, .58) !important;
-    font-size: .95rem !important;
-    line-height: 1.55 !important;
-}
-
-.tsb-course-card > strong {
-    align-self: center !important;
-    justify-self: end !important;
-    min-width: max-content !important;
-    min-height: 38px !important;
-    padding: 0 14px !important;
-    border-radius: 999px !important;
-    background: rgba(255, 255, 255, .055) !important;
-    border: 1px solid rgba(255, 255, 255, .13) !important;
-    color: rgba(255, 255, 255, .78) !important;
-    font-size: .72rem !important;
-    font-weight: 950 !important;
-    white-space: nowrap !important;
-}
-
-/* Enlève le côté énorme du titre jour */
-.tsb-day-head span {
-    font-size: clamp(2.8rem, 5vw, 5.4rem) !important;
-    line-height: .86 !important;
-}
-
-/* Responsive propre */
-@media (max-width: 760px) {
-    .tsb-course-card {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-        padding: 18px !important;
-        border-radius: 22px !important;
-    }
-
-    .tsb-course-card::after {
-        background: linear-gradient(
-            180deg,
-            transparent 45%,
-            var(--course-color, rgba(215, 25, 32, .45))
-        ) !important;
-        opacity: .12 !important;
-    }
-
-    .tsb-course-card h4 {
-        font-size: clamp(1.35rem, 7vw, 2rem) !important;
-        line-height: .95 !important;
-    }
-
-    .tsb-course-card p {
-        font-size: .86rem !important;
-    }
-
-    .tsb-course-card > strong {
-        justify-self: start !important;
-        width: fit-content !important;
-    }
-}
-
-/* =========================================================
-   PRICING TITLE — PREMIUM FIX
-   ========================================================= */
-
-.tsb-pricing-head {
-    display: grid !important;
-    grid-template-columns: 180px 1fr !important;
-    align-items: center !important;
-    gap: 28px !important;
-    padding-bottom: 26px !important;
-    margin-bottom: 28px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
-}
-
-.tsb-pricing-head .eyebrow {
-    position: relative !important;
-    margin: 0 !important;
-    padding-left: 22px !important;
-    color: #ff343b !important;
-    font-size: .72rem !important;
-    font-weight: 950 !important;
-    letter-spacing: .22em !important;
-    text-transform: uppercase !important;
-}
-
-.tsb-pricing-head .eyebrow::before {
-    content: "" !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 50% !important;
-    width: 10px !important;
-    height: 10px !important;
-    border-radius: 999px !important;
-    background: var(--red) !important;
-    transform: translateY(-50%) !important;
-    box-shadow: 0 0 0 7px rgba(215, 25, 32, .12) !important;
-}
-
-.tsb-pricing-head h3 {
-    max-width: 760px !important;
-    margin: 0 !important;
-    color: #ffffff !important;
-    font-size: clamp(2.4rem, 4.4vw, 4.8rem) !important;
-    line-height: .92 !important;
-    font-weight: 1000 !important;
-    letter-spacing: -0.075em !important;
-    text-transform: none !important;
-}
-
-.tsb-pricing-head h3::after {
-    content: "" !important;
-    display: block !important;
-    width: 74px !important;
-    height: 4px !important;
-    margin-top: 18px !important;
-    border-radius: 999px !important;
-    background: linear-gradient(90deg, var(--red), rgba(215, 25, 32, 0)) !important;
-}
-
-/* Responsive titre tarifs */
-@media (max-width: 820px) {
-    .tsb-pricing-head {
-        grid-template-columns: 1fr !important;
-        gap: 14px !important;
-        align-items: start !important;
-    }
-
-    .tsb-pricing-head h3 {
-        font-size: clamp(2.1rem, 10vw, 3.5rem) !important;
-        line-height: .9 !important;
-    }
-
-    .tsb-pricing-head h3::after {
-        margin-top: 14px !important;
-    }
-}
-
-@media (max-width: 420px) {
-    .tsb-pricing-head h3 {
-        font-size: clamp(1.9rem, 11vw, 2.9rem) !important;
-        letter-spacing: -0.065em !important;
-    }
-}
-
-
-/* =========================================================
-   MOBILE MENU — CLEAN FINAL
-   ========================================================= */
-
-@media (min-width: 981px) {
-    .mobile-menu {
-        display: none !important;
-    }
-}
-
-@media (max-width: 980px) {
-    .site-header {
-        z-index: 4100 !important;
-    }
-
-    .desktop-nav,
-    .header-cta {
-        display: none !important;
-    }
-
-    .menu-toggle {
-        display: inline-flex !important;
-        position: relative !important;
-        z-index: 4200 !important;
-        pointer-events: auto !important;
-        cursor: pointer !important;
-    }
-
-    .mobile-menu {
-        position: fixed !important;
-        inset: 0 !important;
-        z-index: 4000 !important;
-        display: flex !important;
-        align-items: flex-start !important;
-        justify-content: center !important;
-        padding: 96px 18px 24px !important;
-        background:
-            radial-gradient(circle at 50% 0%, rgba(215, 25, 32, .20), transparent 36%),
-            rgba(0, 0, 0, .92) !important;
-        backdrop-filter: blur(18px) !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-        transform: translateY(-10px) !important;
-        transition:
-            opacity .25s ease,
-            visibility .25s ease,
-            transform .25s ease !important;
-    }
-
-    body.menu-open .mobile-menu {
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-        transform: translateY(0) !important;
-    }
-
-    .mobile-menu-inner {
-        width: min(420px, 100%) !important;
-        display: grid !important;
-        gap: 10px !important;
-        padding: 18px !important;
-        border-radius: 28px !important;
-        border: 1px solid rgba(255, 255, 255, .12) !important;
-        background:
-            linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .025)),
-            #080808 !important;
-        box-shadow: 0 28px 90px rgba(0, 0, 0, .55) !important;
-    }
-
-    .mobile-menu-inner a {
-        min-height: 48px !important;
-        display: flex !important;
-        align-items: center !important;
-        padding: 0 16px !important;
-        border-radius: 16px !important;
-        color: rgba(255, 255, 255, .76) !important;
-        background: rgba(255, 255, 255, .045) !important;
-        border: 1px solid rgba(255, 255, 255, .08) !important;
-        font-size: .88rem !important;
-        font-weight: 850 !important;
-        text-decoration: none !important;
-    }
-
-    .mobile-menu-inner a:hover,
-    .mobile-menu-inner a.active {
-        color: #ffffff !important;
-        background: rgba(215, 25, 32, .16) !important;
-        border-color: rgba(215, 25, 32, .32) !important;
-    }
-
-    .mobile-menu-inner .mobile-cta {
-        justify-content: center !important;
-        margin-top: 4px !important;
-        background: var(--red) !important;
-        color: #ffffff !important;
-        border-color: rgba(255, 255, 255, .16) !important;
-    }
-
-    body.menu-open .menu-toggle span:first-child {
-        transform: translateY(4px) rotate(45deg) !important;
-    }
-
-    body.menu-open .menu-toggle span:last-child {
-        transform: translateY(-4px) rotate(-45deg) !important;
     }
 }
