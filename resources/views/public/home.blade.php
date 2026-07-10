@@ -393,10 +393,10 @@
                         <article class="tsb-course-card competition">
                             <div>
                                 <span>19h – 21h</span>
-                                <h4>Compétiteur / Intermédiaire</h4>
+                                <h4>Compétiteurs / Intermédiaires</h4>
                                 <p>Séance plus intensive pour les profils avancés.</p>
                             </div>
-                            <strong>Compétiteur</strong>
+                            <strong>Compétiteurs</strong>
                         </article>
                     </div>
                 </div>
@@ -510,10 +510,10 @@
                         <article class="tsb-course-card intermediate">
                             <div>
                                 <span>18h – 19h</span>
-                                <h4>Cours intermédiaire</h4>
+                                <h4>Cours intermédiaires</h4>
                                 <p>Créneau réservé aux pratiquants avec déjà des bases.</p>
                             </div>
-                            <strong>Intermédiaire</strong>
+                            <strong>Intermédiaires</strong>
                         </article>
 
                         <article class="tsb-course-card beginner">
@@ -564,10 +564,10 @@
                         <article class="tsb-course-card competition">
                             <div>
                                 <span>19h – 21h</span>
-                                <h4>Compétiteur</h4>
+                                <h4>Compétiteurs</h4>
                                 <p>Créneau réservé aux compétiteurs.</p>
                             </div>
-                            <strong>Compétiteur</strong>
+                            <strong>Compétiteurs</strong>
                         </article>
                     </div>
                 </div>
@@ -613,7 +613,27 @@
         <div class="tsb-pricing-interface reveal delay-2">
             <div class="tsb-pricing-head">
                 <p class="eyebrow">Tarifs</p>
-                <h3>Choisis ta formule, rejoins la Team.</h3>
+                <h3>Un seul tarif pour toutes les activités.</h3>
+            </div>
+
+            <div class="tsb-pricing-benefits">
+                <article>
+                    <span>01</span>
+                    <strong>Accès aux cours collectifs</strong>
+                    <p>Boxe anglaise, cross training, cours débutants, intermédiaires et confirmés selon le planning.</p>
+                </article>
+
+                <article>
+                    <span>02</span>
+                    <strong>Accès libre inclus</strong>
+                    <p>Profitez aussi des créneaux en accès libre pour vous entraîner à votre rythme.</p>
+                </article>
+
+                <article>
+                    <span>03</span>
+                    <strong>Tarif unique</strong>
+                    <p>Une formule simple, claire, sans multiplication d’options selon les activités.</p>
+                </article>
             </div>
 
             <div class="tsb-pricing-grid">
@@ -628,21 +648,24 @@
                     <span>Progression</span>
                     <h4>3 mois</h4>
                     <strong>240€</strong>
-                    <p>Pour installer une vraie régularité.</p>
+                    <p>Soit 80€/mois.</p>
+                    <small>Économie : 60€</small>
                 </article>
 
                 <article class="tsb-price-card">
                     <span>Endurance</span>
                     <h4>6 mois</h4>
                     <strong>390€</strong>
-                    <p>Une formule solide pour progresser.</p>
+                    <p>Soit 65€/mois.</p>
+                    <small>Économie : 210€</small>
                 </article>
 
                 <article class="tsb-price-card best">
                     <span>Meilleure valeur</span>
                     <h4>12 mois</h4>
                     <strong>470€</strong>
-                    <p>Formule annuelle champion.</p>
+                    <p>Soit 39€/mois.</p>
+                    <small>Économie : 730€ / an</small>
                 </article>
             </div>
 
@@ -650,19 +673,27 @@
                 <div>
                     <span>Tarifs enfants</span>
                     <strong>Boxing kids & ados</strong>
+                    <p>Seulement 40€ de plus pour profiter de l’année complète.</p>
                 </div>
 
                 <div class="tsb-kids-price-list">
                     <article>
                         <small>6 mois</small>
                         <strong>220€</strong>
+                        <p>Soit 36,66€/mois</p>
                     </article>
 
                     <article class="best">
-                        <small>12 mois</small>
+                        <small>Meilleure valeur · 12 mois</small>
                         <strong>260€</strong>
+                        <p>Soit 21,66€/mois</p>
                     </article>
                 </div>
+            </div>
+
+            <div class="tsb-coaching-note">
+                <strong>Coaching privé et personnalisé</strong>
+                <span>Disponible en groupe de 2, 4 ou 6 personnes, selon les modalités du club.</span>
             </div>
         </div>
     </section>
@@ -1138,7 +1169,7 @@
             <article class="access-step reveal delay-1">
                 <span>02</span>
                 <h3>Choisir son rythme</h3>
-                <p>Adulte, enfant, ado, débutant, intermédiaire ou confirmé : chacun est orienté selon son niveau.</p>
+                <p>Adultes, enfants, ados, débutants, intermédiaires ou confirmés : chacun est orienté selon son niveau.</p>
             </article>
 
             <article class="access-step reveal delay-2">
